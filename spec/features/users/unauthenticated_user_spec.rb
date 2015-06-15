@@ -6,7 +6,7 @@ RSpec.describe User, type: :feature do
     Item.create(title: "Sample Item 2", description: "best item ever", price: 35)
     Item.create(title: "Sample Item 3", description: "best item ever", price: 35)
 
-    visit root_path
+    visit items_path
 
     expect(page).to have_content("Sample Item 1")
     expect(page).to have_content("Sample Item 2")
