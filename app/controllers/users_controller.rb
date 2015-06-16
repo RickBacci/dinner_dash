@@ -10,6 +10,8 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       # save unsuccessful
+      # flash needed
+      render :new
     end
   end
 
