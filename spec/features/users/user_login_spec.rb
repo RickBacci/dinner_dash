@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :feature do
-
   it 'should let a registered user login to the site' do
 
     user = User.create(username: "user",
