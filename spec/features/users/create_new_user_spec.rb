@@ -8,7 +8,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :feature do
   it 'registers for the site' do
-    visit new_user_page
+    visit new_user_path
 
     fill_in "Username", with: "user"
     fill_in "Password", with: "pass"
@@ -17,6 +17,4 @@ RSpec.describe User, type: :feature do
 
     expect(page).to have_content("Welcome, user")
   end
-
-   
 end
