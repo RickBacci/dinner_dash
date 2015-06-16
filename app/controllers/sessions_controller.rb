@@ -9,8 +9,6 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      # session failed
-      # need flash
       flash.now[:error] = "Could not create session!"
       redirect_to new_user_path
     end
