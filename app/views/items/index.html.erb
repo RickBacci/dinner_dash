@@ -1,7 +1,9 @@
 <h1> Welcome to our site! </h1>
+<%= flash[:notice] %>
 
 <% @items.each do |item| %>
   <%= item.title %>
   <%= item.description %>
   <%= item.price %>
+  <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
 <% end %>

@@ -1,12 +1,16 @@
 require "rails_helper"
 
 RSpec.describe Cart, type: :feature do
-  scenario "Unauthenticated user adds item to cart" do
-    visit items_path
+  scenario "user flash message when adding item to cart" do
+    item1 = Item.create(title: "milk shake", description: "milky", price: 2)
 
+    visit items_path
+    
     click_button "Add To Cart"
 
-    expect(page).to have_content("Added #{item} to cart")
+    expect(current_path).to eq(items_path)
+  
+    expect(page).to have_content("Added #{item1.title} to cart")
   end
 
   xscenario "Unauthenticated tries to checkout" do
