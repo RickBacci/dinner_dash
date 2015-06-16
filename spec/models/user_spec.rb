@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
- 
-  def valid_attributes { name: "name",
-                         email_address: "user@email.com",
-                         username: "username",
-                         password: "pass"
-                       }
+
+  def valid_attributes
+    { name: "name",
+      email_address: "user@email.com",
+      username: "username",
+      password: "pass"
+    }
   end
 
   it 'should be valid' do
@@ -17,28 +18,28 @@ RSpec.describe User, type: :model do
 
   it 'should not be valid without a name' do
     user = User.create(valid_attributes)
-    user.name = nil 
+    user.name = nil
 
     expect(user).to_not be_valid
   end
 
   it 'should not be valid without an email address' do
     user = User.create(valid_attributes)
-    user.email_address = nil 
+    user.email_address = nil
 
     expect(user).to_not be_valid
   end
 
   it 'should not be valid without a username' do
     user = User.create(valid_attributes)
-    user.username = nil 
+    user.username = nil
 
     expect(user).to_not be_valid
   end
 
   it 'should have a unique username' do
     2.times { User.create(valid_attributes) }
-   
+
     username_count = User.where(username: "username").count
 
     expect(username_count).to eq(1)
