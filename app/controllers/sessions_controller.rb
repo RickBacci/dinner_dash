@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     else
       # session failed
       # need flash
+      flash.now[:error] = "Could not create session!"
     end
   end
 end
