@@ -2,13 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
  
-  def valid_attributes
-    {
-               name: "name",
-      email_address: "user@email.com",
-           username: "username",
-           password: "pass"
-    }
+  def valid_attributes { name: "name",
+                         email_address: "user@email.com",
+                         username: "username",
+                         password: "pass"
+                       }
   end
 
   it 'should be valid' do
