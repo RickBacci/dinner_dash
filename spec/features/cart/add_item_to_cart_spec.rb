@@ -12,15 +12,4 @@ RSpec.describe Cart, type: :feature do
   
     expect(page).to have_content("Added #{item1.title} to cart")
   end
-
-  xscenario "Unauthenticated tries to checkout" do
-    visit items_path
-
-    click_button "Add To Cart"
-    click_button "Add To Cart"
-    click_button "Add To Cart"
-    click_button "Checkout"
-
-    expect(current_path).to eq(login_path)
-  end
 end
