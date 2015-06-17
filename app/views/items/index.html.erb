@@ -1,7 +1,9 @@
 <h1> Welcome to our site! </h1>
 
-<% @items.each do |item| %>
-  <%= item.title %> <br>
+<% @items.each do |item| %> <br>
+  <%= item.title %>
   <%= item.description %>
   <%= item.price %>
+  <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
+  <%= link_to "View Item", category_item_path(item.categories, item) %>
 <% end %>
