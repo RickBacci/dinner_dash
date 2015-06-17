@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  namespace: :admin do
+    get '/dashboard' to: 'admin#dashboard'
+  end
   root to: "categories#index"
 end
