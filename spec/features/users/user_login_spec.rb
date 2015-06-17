@@ -14,7 +14,6 @@ RSpec.describe User, type: :feature do
     fill_in "Password", with: "pass"
 
     click_button "Login"
-
     expect(page).to have_content("Welcome, user")
   end
 end
