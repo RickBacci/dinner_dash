@@ -5,9 +5,13 @@ RSpec.describe Cart, type: :feature do
     item1 = Item.create(title: "milk shake", description: "milky", price: 2)
 
     visit item_path(item1.id)
-    
+
     click_button "Add To Cart"
-  
+
     expect(page).to have_content("You now have 1 #{item1.title}")
+
+    click_link "View Cart"
+
+    expect(page).to have_content(item1.title)
   end
 end

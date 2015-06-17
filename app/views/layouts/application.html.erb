@@ -28,6 +28,7 @@
 <%= button_to "Checkout", carts_path %>
 <%= flash[:notice] %> <br>
 Total items: <%= @cart.count_all %>
+<%= link_to "View Cart", cart_path %>
 
 <%= yield %>
   </div>

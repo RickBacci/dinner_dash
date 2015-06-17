@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :carts, only: [:create, :show, :index]
+  resources :carts, only: [:create]
+  # move this to line_items#create
+
+  get "/cart", to: "carts#show"
   resources :users, only: [:new, :create, :show]
 
   resources :items, only: [:show, :index]
