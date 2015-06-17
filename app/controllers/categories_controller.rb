@@ -3,4 +3,8 @@ class CategoriesController < ApplicationController
     @user = User.find(session[:user_id]) if session[:user_id]
     @categories = Category.all
   end
+
+  def show
+    @category = Category.find(params[:id])
+  end
 end
