@@ -4,7 +4,7 @@ class Seed
   end
 
   def generate
-    destroy_items
+    #destroy_items
     create_items
   end
 
