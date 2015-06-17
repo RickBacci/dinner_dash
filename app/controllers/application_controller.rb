@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-<<<<<<< HEAD
   before_action :load_cart
 
   def load_cart
     @cart = Cart.new(session[:cart])
-=======
+  end
+
   helper_method :un_authenticated_visitor?
   helper_method :current_user
   helper_method :current_user?
@@ -24,6 +24,5 @@ class ApplicationController < ActionController::Base
 
   def current_admin?
     current_user && current_user.admin?
->>>>>>> master
   end
 end
