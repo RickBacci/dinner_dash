@@ -1,4 +1,16 @@
-<h1> All Categories </h1>
+<h1>Categories Index</h1>
+
+
+<% if current_user? %>
+  <%= button_to "Logout", logout_path, method: :delete %><br>
+  Welcome, <%= @user.username %><br>
+<% else %>
+  <%= button_to "Login", login_path, method: :get %>
+<% end %>
+
+<% unless current_admin? %>
+  Admin Dashboard
+<% end %>
 
 <% @categories.each do |category| %>
   <%= category.name %>
