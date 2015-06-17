@@ -2,3 +2,8 @@
 <% unless un_authenticated_visitor? %>
   Welcome, <%= @user.username %>
 <% end %>
+
+<% @categories.each do |category| %>
+  <%= category.name %>
+  <br>
+ <% end %>
