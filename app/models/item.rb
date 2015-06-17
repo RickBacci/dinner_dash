@@ -1,3 +1,4 @@
 class Item < ActiveRecord::Base
-  belongs_to :category
+  has_many :order_items
+  has_many :categories, through: :order_items
 end
