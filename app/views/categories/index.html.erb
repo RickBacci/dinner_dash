@@ -1,12 +1,14 @@
 <h1>Categories Index</h1>
 
 
-<%= button_to "Login", login_path, method: :get %>
 
-<% unless un_authenticated_visitor? %>
+<% if current_user? %>
   <%= button_to "Logout", logout_path, method: :delete %><br>
   Welcome, <%= @user.username %><br>
+<% else %>
+  <%= button_to "Login", login_path, method: :get %>
 <% end %>
 
-Welcome Admin
-
+<% unless current_admin? %>
+  Admin Dashboard
+<% end %>

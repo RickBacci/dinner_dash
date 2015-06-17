@@ -5,12 +5,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :un_authenticated_visitor?
   helper_method :current_user
+  helper_method :current_user?
+  helper_method :current_admin?
 
   def current_user
     @current_user ||= @current_user = User.find(session[:user_id]) if session[:user_id]
   end
 
-  def un_authenticated_visitor?
-    session[:user_id].nil?
+  def current_user?
+    current_user && session[:user_id] != nil
+  end
+
+  def current_admin?
+    current_user && current_user.admin?
   end
 end
