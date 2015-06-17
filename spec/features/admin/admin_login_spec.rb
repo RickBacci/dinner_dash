@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :feature do
-  it 'should be able to login as an admin' do
+  it 'should be able to login as an admin and see Admin Dashboard button' do
     admin = User.new(name: 'admin',
                      email_address: 'admin@site.com',
                      username: 'admin',
@@ -15,7 +15,7 @@ RSpec.describe User, type: :feature do
     visit root_path
 
     expect(admin.email_address).to eq('admin@site.com')
-    expect(page).to have_content('Admin Dashboard')
+    expect(page).to have_button('Admin Dashboard')
   end
 
   it 'should not allow a regular user to see admin functionality' do
