@@ -21,7 +21,7 @@ RSpec.describe User, type: :feature do
     visit categories_path
 
     expect(page).to have_content("category 1")
-    expect(page).to have_content("categoey 2")
+    expect(page).to have_content("category 2")
     expect(page).to have_content("category 3")
   end
 
