@@ -2,11 +2,12 @@ require 'rails_helper'
 
 RSpec.describe User, type: :feature do
   scenario "user views index page" do
-    Item.create(title: "Sample Item 1", description: "best item ever", price: 35)
-    Item.create(title: "Sample Item 2", description: "best item ever", price: 35)
-    Item.create(title: "Sample Item 3", description: "best item ever", price: 35)
+    category = Category.create(name: "cheap smoothies")
+    category.items.create(title: "Sample Item 1", description: "best item ever", price: 35)
+    category.items.create(title: "Sample Item 2", description: "best item ever", price: 35)
+    category.items.create(title: "Sample Item 3", description: "best item ever", price: 35)
 
-    visit items_path
+    visit category_items_path(category.id)
 
     expect(page).to have_content("Sample Item 1")
     expect(page).to have_content("Sample Item 2")
