@@ -4,11 +4,17 @@ class Seed
   end
 
   def generate
+    destroy_items
     create_items
   end
 
+  def destroy_items
+    items_destroyed = Item.destroy_all
+    puts "#{items_destroyed.count} items destroyed"
+  end
+
   def create_items
-    item.each do |title, description, price|
+    item.each do |(title, description, price)|
       Item.create(title: title, description: description, price: price)
     end
     puts "#{Item.all.map(&:title).join(", ")} created."
@@ -17,13 +23,13 @@ class Seed
   private
 
   def item
-    {"item 1"  => {"description" => "wholesome",  "price"  => 1}, 
-     "item 2"  => {"description" => "nutritious", "price"  =>  2},
-     "itmem 3" => {"description" => "healthy",    "price" => 3},
-     "item 4"  => {"description" => "smooth",     "price" => 4}
-    }
-    # {"item 2"  => "nutritious", 
-    #  "nutritious" => 2}
+    [
+     ["Granola", "wholesome", 1],
+     ["Apple", "nutritious", 1],
+     ["Grapefruit", "healthy", 1],
+     ["Banana", "fatty", 1],
+     ["Pineapple", "hairy", 1]
+    ]
   end
 end
 

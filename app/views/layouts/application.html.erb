@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= session[:cart] %>
+<%= button_to "Checkout", carts_path %>
+<%= flash[:notice] %> <br>
+Total items: <%= @cart.count_all %>
 
 <%= yield %>
 

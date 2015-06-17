@@ -1,12 +1,13 @@
 class CartsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   def create
-    cart = session[:cart] || {}
-    cart[params[:item_id]] ||= 0
-    cart[params[:item_id]] += 1
-    session[:cart] = cart
-    
-    item = Item.find(params[:item_id].to_i)
-    redirect_to items_path, notice: "Added #{item.title} to cart"
+    item = Item.find(params[:item_id])
+    @cart.add_item(item.id)
+    session[:cart] = @cart.contents
+
+    flash[:notice] = "You now have #{pluralize(@cart.count_of(item.id), item.title)}."
+    redirect_to :back
   end
   
 end
