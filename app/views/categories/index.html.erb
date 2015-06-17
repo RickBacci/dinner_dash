@@ -1,7 +1,6 @@
 <h1>Categories Index</h1>
 
 
-
 <% if current_user? %>
   <%= button_to "Logout", logout_path, method: :delete %><br>
   Welcome, <%= @user.username %><br>
@@ -12,3 +11,9 @@
 <% unless current_admin? %>
   Admin Dashboard
 <% end %>
+
+<% @categories.each do |category| %>
+  <%= category.name %>
+  <br>
+ <% end %>
+

@@ -1,7 +1,7 @@
 <h1> Welcome to our site! </h1>
 
 <% @items.each do |item| %>
+  <%= item.title %> <br>
   <%= item.description %>
   <%= item.price %>
-  <%= item.title %>
 <% end %>
