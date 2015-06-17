@@ -19,7 +19,6 @@ RSpec.describe User, type: :feature do
   end
 
   it 'should not allow a regular user to see admin functionality' do
-<<<<<<< HEAD
     user = User.new(name: 'user',
                      email_address: 'user@site.com',
                      username: 'user',
@@ -29,13 +28,6 @@ RSpec.describe User, type: :feature do
     allow_any_instance_of(ApplicationController)
       .to receive(:current_user)
       .and_return(user)
-=======
-    user = User.new(name: 'admin',
-                     email_address: 'admin@site.com',
-                     username: 'admin',
-                     password: 'admin',
-                     role: 0)
->>>>>>> 4efe01ad399c59cc556b1cc06a6281f0653a74b8
 
     visit root_path
 
