@@ -25,10 +25,10 @@ class Seed
   def item
     [
      ["Granola", "wholesome", 1],
-     ["Apple", "nutritious", 1],
-     ["Grapefruit", "healthy", 1],
-     ["Banana", "fatty", 1],
-     ["Pineapple", "hairy", 1]
+     ["Apple", "nutritious", 3],
+     ["Grapefruit", "healthy", 2],
+     ["Banana", "fatty", 4],
+     ["Pineapple", "hairy", 5]
     ]
   end
 end
