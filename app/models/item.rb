@@ -11,6 +11,6 @@ has_attached_file :picture, styles: {thumb: '100x100>',
                              s3_credentials: { access_key_id: ENV["access_key_id"],
                                                secret_access_key: ENV["secret_access_key"]
                                              }
- do_not_validate_attachment_file_type :picture
-#  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+# do_not_validate_attachment_file_type :picture
+ validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
 end
