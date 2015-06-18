@@ -1,0 +1,23 @@
+<h1>Admin Dashboard</h1>
+<%= link_to "Create Item", new_item_path %>
+
+
+<%= form_for [:admin, @item], url: items_path, html: { :multipart => true } do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.label :picture %>
+  <%= f.file_field :picture %>
+
+  <%= f.submit "Create Item" %>
+<% end %>
+<br>
+<%= image_tag @item.picture.url %>
+<%= image_tag @item.picture.url(:medium) %>
+<%= image_tag @item.picture.url(:thumb) %>

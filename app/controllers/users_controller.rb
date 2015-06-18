@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      flash.now[:error] = "Could not create user!"
+      flash.now[:error] = 'Could not create user!'
       render :new
     end
   end

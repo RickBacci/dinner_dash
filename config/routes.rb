@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
 
-  resources :items, only: [:show, :index]
+  resources :items, only: [:show, :index, :new, :create]
 
   resources :categories, only: [:index, :show] do
     resources :items, only: [:index, :show]
@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+  end
   root to: "categories#index"
 end

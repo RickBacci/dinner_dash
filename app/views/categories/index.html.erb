@@ -9,7 +9,7 @@
 <% end %>
 
 <% if current_admin? %>
-  Admin Dashboard
+  <%= button_to "Admin Dashboard", admin_dashboard_path, method: :get %>
 <% end %>
 
 <% @categories.each do |category| %>
