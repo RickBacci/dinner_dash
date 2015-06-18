@@ -34,11 +34,12 @@ describe "Admin", type: :feature do
     fill_in "Description", with: "Awesome Description"
     fill_in "Price", with: "100"
 
-    page.find("item_picture").click
+    click_button "item[picture]"
+
 
     attach_file "Image", "spec/asset_specs/photos/test.png"
 
-    #click_link "Create Item"
+    click_link "Create Item"
 
     expect(page).to have_selector("img")
   end
