@@ -9,4 +9,8 @@ class CartsController < ApplicationController
     flash[:notice] = "You now have #{pluralize(@cart.count_of(item.id), item.title)}."
     redirect_to :back
   end
+
+  def show
+    @items = CartPresenter.new(@cart).items
+  end
 end
