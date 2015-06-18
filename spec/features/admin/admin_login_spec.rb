@@ -18,10 +18,10 @@ RSpec.describe User, type: :feature do
 
   it 'should not allow a regular user to see admin functionality' do
     user = User.new(name: 'user',
-                     email_address: 'user@site.com',
-                     username: 'user',
-                     password: 'user',
-                     role: 0)
+                    email_address: 'user@site.com',
+                    username: 'user',
+                    password: 'user',
+                    role: 0)
 
     allow_any_instance_of(ApplicationController)
       .to receive(:current_user)
