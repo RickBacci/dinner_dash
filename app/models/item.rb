@@ -14,9 +14,6 @@ has_attached_file :picture, styles: {thumb: '100x100>',
                                                secret_access_key: ENV["secret_access_key"]
                                              }
 
-:url => ":s3_domain_url",
-    :path => "/:class/avatars/:id_:basename.:style.:extension"
-
 # do_not_validate_attachment_file_type :picture
  validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
 end
