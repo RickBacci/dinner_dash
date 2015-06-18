@@ -11,7 +11,7 @@
   <ul class="navigation">
     <li class="nav-item"><a href="/categories">Categories</a></li>
     <li class="nav-item"><a href="/items">Items</a></li>
-    <li class="nav-item"><a href="/carts">Cart</a></li>
+    <li class="nav-item"><a href="/cart">Cart</a></li>
     <li class="nav-item"><a href="/users/<%= params[:user_id]%>/orders">Orders</a></li>
     <li class="nav-item"><a href="/about">About</a></li>
     <% if current_user %>
@@ -25,7 +25,6 @@
 <label for="nav-trigger"></label>
 
   <div class="site-wrap">
-<%= button_to "Checkout", carts_path %>
 <%= flash[:notice] %> <br>
 Total items: <%= @cart.count_all %>
 <%= link_to "View Cart", cart_path %>
