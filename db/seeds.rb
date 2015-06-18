@@ -4,13 +4,15 @@ class Seed
   end
 
   def generate
-    #destroy_items
+    # destroy_all
     create_items
+    create_categories
   end
 
-  def destroy_items
+  def destroy_all
     items_destroyed = Item.destroy_all
-    puts "#{items_destroyed.count} items destroyed"
+    categories_destroyed = Category.destroy_all
+    puts "#{items_destroyed.count} items destroyed and #{categories_destroyed.count} categories destroyed"
   end
 
   def create_items
@@ -20,7 +22,23 @@ class Seed
     puts "#{Item.all.map(&:title).join(', ')} created."
   end
 
+  def create_categories
+    category.each do |name|
+      Category.create(name: name)
+    end
+  end
+
   private
+
+  def category
+    [
+      "Fruit",
+      "Vegitable",
+      "Root",
+      "Grass",
+      "Other"
+    ]
+  end
 
   def item
     [

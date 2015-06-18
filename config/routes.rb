@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # move this to line_items#create
 
   get "/cart", to: "carts#show"
+  post "/cart", to: "carts#destroy"
+
   resources :users, only: [:new, :create, :show]
 
   resources :items, only: [:show, :index, :new, :create]
