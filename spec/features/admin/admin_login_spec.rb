@@ -27,7 +27,7 @@ RSpec.describe User, type: :feature do
 
     visit root_path
 
-    expect(page).to_not have_content('Admin Dashboard')
+    expect(page).to_not have_button('Admin Dashboard')
   end
 end
 
