@@ -1,5 +1,4 @@
 class Admin::BaseController < ApplicationController
-
   private
 
   before_action :require_admin
