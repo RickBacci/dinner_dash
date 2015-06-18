@@ -8,12 +8,11 @@ has_attached_file :picture, styles: {thumb: '100x100>',
                              default_url: "default-medium.jpg",
                              storage: :s3,
                              bucket: ENV['dinner-dash'],
-                             path: "/:class/avatars/:id_:basename.:style.:extension",
-                             url: ":s3_domain_url",
+                             #path: "/:class/picture/:id_:basename.:style.:extension",
+                             #url: ":s3_domain_url",
                              s3_credentials: { access_key_id: ENV["access_key_id"],
                                                secret_access_key: ENV["secret_access_key"]
                                              }
 
-# do_not_validate_attachment_file_type :picture
  validates_attachment :picture, content_type: { content_type: ["picture/jpg", "picture/jpeg", "picture/png", "picture/gif"] }
 end
