@@ -8,7 +8,8 @@ RSpec.describe User, type: :feature do
                      password: 'admin',
                      role: 1)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    allow_any_instance_of(ApplicationController).to
+      receive(:current_user).and_return(admin)
 
     visit root_path
 
@@ -23,9 +24,8 @@ RSpec.describe User, type: :feature do
                     password: 'user',
                     role: 0)
 
-    allow_any_instance_of(ApplicationController)
-      .to receive(:current_user)
-      .and_return(user)
+    allow_any_instance_of(ApplicationController).to
+      receive(:current_user).and_return(user)
 
     visit root_path
 
