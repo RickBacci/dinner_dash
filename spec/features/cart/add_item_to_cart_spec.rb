@@ -10,7 +10,7 @@ RSpec.describe Cart, type: :feature do
 
     expect(page).to have_content("You now have 1 #{item1.title}")
 
-    click_link "View Cart"
+    click_link "Cart"
 
     expect(page).to have_content(item1.title)
   end
