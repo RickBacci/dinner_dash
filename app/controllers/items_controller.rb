@@ -12,14 +12,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-   @item = Item.create(item_params)
-   # @item = Item.create(params[:item])
+    @item = Item.create(item_params)
+
     if @item.save
       flash[:notice] = "Item created!"
-      redirect_to admin_dashboard_path
+      redirect_to @item
     else
       flash[:notice] = "Item creation failed!"
-   #   redirect_to admin_dashboard_path
       render :new
     end
   end

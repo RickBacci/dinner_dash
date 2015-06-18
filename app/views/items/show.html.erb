@@ -4,7 +4,11 @@ Total items: <%= @cart.count_all %> <br>
 
 <%= @item.title %>
 <%= @item.description %>
-<%= @item.price %> 
+<%= @item.price %>
+
+<%= image_tag @item.picture.url %><br>
+<%= image_tag @item.picture.url(:medium) %><br>
+<%= image_tag @item.picture.url(:thumb) %><br>
 
 <%= button_to "Add To Cart", carts_path(item_id: @item.id) %>
 
