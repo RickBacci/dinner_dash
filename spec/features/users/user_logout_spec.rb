@@ -14,10 +14,10 @@ RSpec.describe User, type: :feature do
 
     click_button "Login"
 
-    expect(page).to have_content("Welcome, user")
+    expect(page).to have_content("Logout")
 
-    click_button "Logout"
+    click_link "Logout"
 
-    expect(page).to_not have_content ("Welcome, user")
+    expect(page).to have_content("Login")
   end
 end

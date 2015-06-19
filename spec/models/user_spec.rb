@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe User, type: :model do
-
   def valid_attributes
     {
       name: "Jeff Casimir",
@@ -56,9 +55,9 @@ describe User, type: :model do
 
   it 'can leave the username blank and their full name will be used' do
     user = User.create(name: "name",
-      email_address: "user@email.com",
-      username: nil,
-      password: "pass")
+                       email_address: "user@email.com",
+                       username: nil,
+                       password: "pass")
 
     expect(user).to_not be_valid
   end
@@ -80,4 +79,3 @@ describe User, type: :model do
     expect(email_count).to eq(1)
   end
 end
-
