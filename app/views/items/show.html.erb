@@ -1,12 +1,8 @@
-<h3> ITEM </h3>
-
-Total items: <%= @cart.count_all %> <br>
+<%= image_tag @item.picture.url(:medium) %><br>
 
 <%= @item.title %><br>
 <%= @item.description %><br>
 <%= @item.price %><br><br>
-
-<%= image_tag @item.picture.url(:medium) %><br>
 
 <%= button_to "Add To Cart", carts_path(item_id: @item.id) %>
 
