@@ -81,5 +81,3 @@ describe User, type: :model do
   end
 end
 
-# A user must have a plausibly valid email address that is unique across all users
-
