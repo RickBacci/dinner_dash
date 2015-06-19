@@ -80,4 +80,3 @@ describe User, type: :model do
     expect(email_count).to eq(1)
   end
 end
-
