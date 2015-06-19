@@ -31,4 +31,11 @@ RSpec.describe User, type: :feature do
     expect(page).to have_content("category 2")
     expect(page).to have_content("category 3")
   end
+
+  scenario "that tries to visit the admin dashboard gets a 404" do
+    visit admin_dashboard_path
+
+    PageDoesNotExist = "The page you were looking for doesn't exist"
+    expect(page).to have_content(PageDoesNotExist)
+  end
 end

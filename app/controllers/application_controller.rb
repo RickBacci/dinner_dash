@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     @cart = Cart.new(session[:cart])
   end
 
-  helper_method :un_authenticated_visitor?
   helper_method :current_user
   helper_method :current_user?
   helper_method :current_admin?
