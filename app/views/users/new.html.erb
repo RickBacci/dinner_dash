@@ -1,18 +1,14 @@
-<h1>New User Registration</h1>
-
+<h1>Signup</h1>
+<br>
 
 <%= form_for @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: "Name" %><br>
 
-  <%= f.label :email_address %>
-  <%= f.text_field :email_address %>
+  <%= f.text_field :email_address, placeholder: "Email" %><br>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.text_field :username, placeholder: "Username" %><br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, placeholder: "Password" %><br><br>
 
   <%= f.submit %>
 <% end %>

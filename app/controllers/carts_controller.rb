@@ -13,4 +13,9 @@ class CartsController < ApplicationController
   def show
     @items = CartPresenter.new(@cart).items
   end
+
+  def destroy
+    session[:cart] = {}
+    redirect_to :back
+  end
 end
