@@ -17,7 +17,7 @@ describe "Admin", type: :feature do
     expect(page).to have_content("Admin Dashboard")
   end
 
-  xit 'can add and item to the database' do
+  it 'can add and item to the database' do
     admin = User.create(name: 'admin',
                         email_address: 'admin@site.com',
                         username: 'admin',
@@ -34,12 +34,9 @@ describe "Admin", type: :feature do
     fill_in "Description", with: "Awesome Description"
     fill_in "Price", with: "100"
 
-    click_button "item[picture]"
+    attach_file "item_picture", "spec/asset_specs/photos/test.png"
 
-
-    attach_file "Image", "spec/asset_specs/photos/test.png"
-
-    click_link "Create Item"
+    click_button "Create Item"
 
     expect(page).to have_selector("img")
   end

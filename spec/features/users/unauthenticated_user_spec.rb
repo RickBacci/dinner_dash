@@ -19,7 +19,6 @@ RSpec.describe User, type: :feature do
     expect(page).to have_content("Sample Item 1")
     expect(page).to have_content("Sample Item 2")
     expect(page).to have_content("Sample Item 3")
-    expect(page).to have_content("Welcome to our site!")
   end
 
   scenario "user views categories page" do
@@ -31,5 +30,12 @@ RSpec.describe User, type: :feature do
     expect(page).to have_content("category 1")
     expect(page).to have_content("category 2")
     expect(page).to have_content("category 3")
+  end
+
+  scenario "that tries to visit the admin dashboard gets a 404" do
+    visit admin_dashboard_path
+
+    PageDoesNotExist = "The page you were looking for doesn't exist"
+    expect(page).to have_content(PageDoesNotExist)
   end
 end

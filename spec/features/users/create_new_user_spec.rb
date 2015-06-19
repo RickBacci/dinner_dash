@@ -5,7 +5,7 @@ RSpec.describe User, type: :feature do
     visit new_user_path
 
     fill_in "Name", with: "user"
-    fill_in "Email address", with: "email@address.com"
+    fill_in "Email", with: "email@address.com"
     fill_in "Username", with: "username"
     fill_in "Password", with: "pass"
 
