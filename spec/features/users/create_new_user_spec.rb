@@ -11,6 +11,6 @@ RSpec.describe User, type: :feature do
 
     click_button "Create User"
 
-    expect(page).to have_content("Welcome, user")
+    expect(page).to_not have_content("login")
   end
 end
