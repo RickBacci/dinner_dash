@@ -10,6 +10,11 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
 
+  <% if @item.picture.exists? %>
+      <%= image_tag @item.picture.url %><br/>
+    <%= f.label :picture, "Attach a New Picture" %><br />
+    <%= f.file_field :picture %>
+  <% end %>
   <%= f.label :picture %>
   <%= f.file_field :picture %>
 
