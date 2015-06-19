@@ -19,7 +19,6 @@ RSpec.describe User, type: :feature do
     expect(page).to have_content("Sample Item 1")
     expect(page).to have_content("Sample Item 2")
     expect(page).to have_content("Sample Item 3")
-    expect(page).to have_content("Welcome to our site!")
   end
 
   scenario "user views categories page" do

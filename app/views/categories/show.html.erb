@@ -1,6 +1,12 @@
-<% @category.items.each do |item| %>
-  <%= item.title %> <br>
-  <%= item.description %> <br>
-  <%= item.price %> <br>
-<% end %>
-
+<div class="centered">
+  <% @category.items.each do |item| %>
+    <span class="item">
+      <%= image_tag item.picture.url(:medium) %><br>
+      <%= item.title %><br>
+      <%= item.description %><br>
+      <%= item.price %><br>
+      <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
+      <%= link_to "View Item", category_item_path(item.categories, item) %> <br> <br>
+    </span>
+  <% end %>
+</div>

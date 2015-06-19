@@ -13,20 +13,22 @@
     <li class="nav-item"><a href="/items">Items</a></li>
     <li class="nav-item"><a href="/cart">Cart</a></li>
     <li class="nav-item"><a href="/users/<%= params[:user_id]%>/orders">Orders</a></li>
-    <li class="nav-item"><a href="/about">About</a></li>
     <% if current_user %>
       <li class="nav-item"><a href="/logout">Logout</a></li>
     <% else %>
       <li class="nav-item"><a href="/login">Login</a></li>
+      <li class="nav-item"><a href="/users/new">Signup</a></li>
     <% end %>
   </ul>
 
   <input type="checkbox" id="nav-trigger" class="nav-trigger" />
   <label for="nav-trigger"></label>
 
-  <div class="site-wrap">
+  <div class="site-wrap centered">
 <%= flash[:notice] %> <br>
 Total items: <%= @cart.count_all %>
+<br>
+<br>
 
 <%= yield %>
   </div>
