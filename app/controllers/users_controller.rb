@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) if current_user? && params[:id]
+    @user = User.find(params[:id]) if current_user && params[:id]
 
     render file: "/public/404" unless users_page?
   end
