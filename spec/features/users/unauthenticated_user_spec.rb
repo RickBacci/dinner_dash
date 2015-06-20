@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+PAGE_DOES_NOT_EXIST = "The page you were looking for doesn't exist"
+
 RSpec.describe User, type: :feature do
   scenario "user views index page" do
     category = Category.create(name: "cheap smoothies")
@@ -35,7 +37,25 @@ RSpec.describe User, type: :feature do
   scenario "that tries to visit the admin dashboard gets a 404" do
     visit admin_dashboard_path
 
-    PageDoesNotExist = "The page you were looking for doesn't exist"
-    expect(page).to have_content(PageDoesNotExist)
+    expect(page).to have_content(PAGE_DOES_NOT_EXIST)
+  end
+
+  scenario "that tries to visit a users show page gets a 404" do
+    visit user_path(1)
+
+    expect(page).to have_content(PAGE_DOES_NOT_EXIST)
+  end
+
+  scenario "that tries to visit a non-existent user show page gets a 404" do
+    user = User.create(
+      name: "Jeff Casimir",
+      email_address: "demo+jeff@jumpstartlab.com",
+      username: "j3",
+      password: "password")
+
+    visit user_path(user.id + 1)
+
+    expect(page).to have_content(PAGE_DOES_NOT_EXIST)
+    expect(page).to_not have_content("Couldn't find User")
   end
 end

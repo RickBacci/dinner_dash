@@ -1,5 +1,9 @@
 require 'rails_helper'
 
+def instance_of_app_controller
+  allow_any_instance_of(ApplicationController)
+end
+
 describe "Admin", type: :feature do
   it 'can visit the dashboard' do
     admin = User.create(name: 'admin',
@@ -8,7 +12,7 @@ describe "Admin", type: :feature do
                         password: 'admin',
                         role: 1)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    instance_of_app_controller.to receive(:current_user).and_return(admin)
 
     visit root_path
 
@@ -24,7 +28,7 @@ describe "Admin", type: :feature do
                         password: 'admin',
                         role: 1)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    instance_of_app_controller.to receive(:current_user).and_return(admin)
 
     visit root_path
 
@@ -40,12 +44,4 @@ describe "Admin", type: :feature do
 
     expect(page).to have_selector("img")
   end
-
-# An item must have a title, description, and price.
-# An item must belong to at least one category.
-# The title and description cannot be empty strings.
-# The title must be unique for all items in the system.
-# The price must be a valid decimal numeric value and greater than zero.
-# The photo is optional. If not present, a stand-in photo is used.
-
 end
