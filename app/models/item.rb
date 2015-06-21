@@ -10,4 +10,9 @@ class Item < ActiveRecord::Base
 
   validates_attachment :picture,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
+  validates :title, presence: true, allow_blank: false, uniqueness: true
+  validates :description, presence: true
+  validates :price, presence: true, numericality: { only: :decimal, greater_than: 0 }
+
 end
