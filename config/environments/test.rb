@@ -1,4 +1,11 @@
 Rails.application.configure do
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.paperclip_defaults = {
+    path: ":rails_root/public/test/:attachment/:id/:style/:filename",
+    url: "/test/:attachment/:id/:style/:filename"
+  }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
