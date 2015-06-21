@@ -13,9 +13,14 @@ describe User, type: :feature do
     fill_in "Title", with: "cherry"
     fill_in "Description", with: "are red and awesome"
     fill_in "Price", with: 2
+    fill_in "Category list", with: "tropical"
     click_on "Create Item"
 
     expect(page).to have_content("cherry")
+
+    visit categories_path
+
+    expect(page).to have_content("tropical")
   end
 end
 
