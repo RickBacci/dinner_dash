@@ -29,11 +29,10 @@ describe Item, type: :model do
   end
 
   it 'must have a unique title' do
-    item = Item.create(valid_attributes)
-    item = Item.create(valid_attributes)
+    2.times { Item.create(valid_attributes) }
 
-    title = Item.where(title: item.title)
-    expect(title.size).to eq(1)
+    items = Item.where(title: 'Item#1')
+    expect(items.size).to eq(1)
   end
 
   it 'must have a description' do
