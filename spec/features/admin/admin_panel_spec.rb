@@ -4,12 +4,6 @@ describe "Admin", type: :feature do
   include SignInHelpers
 
   it 'can visit the dashboard' do
-    admin = User.create(name: 'admin',
-                        email_address: 'admin@site.com',
-                        username: 'admin',
-                        password: 'admin',
-                        role: 1)
-
     sign_in_as(admin)
 
     visit root_path
@@ -20,12 +14,6 @@ describe "Admin", type: :feature do
   end
 
   it 'can add and item to the database' do
-    admin = User.create(name: 'admin',
-                        email_address: 'admin@site.com',
-                        username: 'admin',
-                        password: 'admin',
-                        role: 1)
-
     sign_in_as(admin)
 
     visit root_path
