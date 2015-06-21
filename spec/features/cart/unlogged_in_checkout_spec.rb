@@ -15,9 +15,6 @@ RSpec.describe Cart, type: :feature do
     click_button "Add To Cart"
 
     expect(page).to have_content("You now have 2 #{item2.title}")
-
-    click_link "Cart"
-
   end
 
   scenario "user sees title, quantity, and price of items in cart" do
