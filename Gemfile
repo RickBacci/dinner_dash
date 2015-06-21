@@ -27,6 +27,8 @@ gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', '<=2.0'
 
+gem 'compass'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

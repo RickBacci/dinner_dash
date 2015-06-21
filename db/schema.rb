@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618210257) do
+ActiveRecord::Schema.define(version: 20150621201241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20150618210257) do
     t.decimal  "price"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "picture"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -48,10 +47,13 @@ ActiveRecord::Schema.define(version: 20150618210257) do
   create_table "order_items", force: :cascade do |t|
     t.integer "item_id"
     t.integer "order_id"
+    t.integer "quantity"
+    t.integer "user_id"
   end
 
   add_index "order_items", ["item_id"], name: "index_order_items_on_item_id", using: :btree
   add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["user_id"], name: "index_order_items_on_user_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.datetime "order_date"
@@ -74,4 +76,5 @@ ActiveRecord::Schema.define(version: 20150618210257) do
   add_foreign_key "category_items", "items"
   add_foreign_key "order_items", "items"
   add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "users"
 end
