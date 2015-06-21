@@ -5,6 +5,7 @@ class Seed
 
   def generate
     create_items
+    create_users
   end
 
   def create_items
@@ -17,6 +18,10 @@ class Seed
     categories.each do |category_name|
       Category.create(name: category_name)
     end
+  end
+
+  def create_users
+    users.map { |user| User.create(user) }
   end
 
   private
@@ -54,6 +59,22 @@ class Seed
       [title: "Carrots", description: "full of fiber", price: 6],
       [title: "Cereal", description: "perfect for breakfast", price: 86],
       [title: "Blackberries", description: "my favorite!", price: 5]
+    ]
+  end
+
+  def users
+    [
+      [name: "user",
+       email_address: "user@user.com",
+       username: "user",
+       password: "user",
+       role: 0],
+
+       [name: "admin",
+       email_address: "admin@admin.com",
+       username: "admin",
+       password: "admin",
+       role: 1]
     ]
   end
 end

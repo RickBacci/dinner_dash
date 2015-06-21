@@ -22,7 +22,7 @@ module SignInHelpers
       name: 'user',
       email_address: 'user@site.com',
       username: 'user',
-      password: 'user',
+      password: 'password',
       role: 0)
   end
 
@@ -31,7 +31,7 @@ module SignInHelpers
       name: 'admin',
       email_address: 'admin@site.com',
       username: 'admin',
-      password: 'admin',
+      password: 'password',
       role: 1)
   end
 
