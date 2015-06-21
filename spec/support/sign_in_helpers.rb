@@ -3,9 +3,7 @@ module SignInHelpers
     visit login_path
     fill_in "Username", with: user.name
     fill_in "Password", with: user.password
-    within("form") do
-      click_on "Login"
-    end
+    click_button "Login"
   end
 
   def user
@@ -13,7 +11,7 @@ module SignInHelpers
       name: 'user',
       email_address: 'user@site.com',
       username: 'user',
-      password: 'user',
+      password: 'password',
       role: 0)
   end
 
@@ -22,7 +20,7 @@ module SignInHelpers
       name: 'admin',
       email_address: 'admin@site.com',
       username: 'admin',
-      password: 'admin',
+      password: 'password',
       role: 1)
   end
 
