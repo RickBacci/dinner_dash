@@ -9,7 +9,7 @@ describe User, type: :feature do
     visit root_path
 
     expect(admin.email_address).to eq('admin@site.com')
-    expect(page).to have_button('Admin Dashboard')
+    expect(page).to have_link('Admin')
   end
 
   it 'should not allow a regular user to see admin functionality' do
@@ -17,7 +17,7 @@ describe User, type: :feature do
 
     visit root_path
 
-    expect(page).to_not have_button('Admin Dashboard')
+    expect(page).to_not have_button('Admin')
   end
 end
 

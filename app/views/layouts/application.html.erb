@@ -19,6 +19,10 @@
       <li class="nav-item"><a href="/login">Login</a></li>
       <li class="nav-item"><a href="/users/new">Signup</a></li>
     <% end %>
+
+    <% if current_admin? %>
+    <li class="nav-item"><a rel="nofollow" data-method="get" href="/admin/dashboard">Admin</a></li>
+    <% end %>
   </ul>
 
 
