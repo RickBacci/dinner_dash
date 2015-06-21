@@ -1,6 +1,10 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require "paperclip/matchers"
 
+Dir.glob(File.expand_path("../support/*", __FILE__)).each do |file|
+  require file
+end
+
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

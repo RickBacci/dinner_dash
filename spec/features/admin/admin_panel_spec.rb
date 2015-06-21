@@ -1,18 +1,10 @@
 require 'rails_helper'
 
-def instance_of_app_controller
-  allow_any_instance_of(ApplicationController)
-end
-
 describe "Admin", type: :feature do
-  it 'can visit the dashboard' do
-    admin = User.create(name: 'admin',
-                        email_address: 'admin@site.com',
-                        username: 'admin',
-                        password: 'admin',
-                        role: 1)
+  include SignInHelpers
 
-    instance_of_app_controller.to receive(:current_user).and_return(admin)
+  it 'can visit the dashboard' do
+    sign_in_as(admin)
 
     visit root_path
 
@@ -22,13 +14,7 @@ describe "Admin", type: :feature do
   end
 
   it 'can add and item to the database' do
-    admin = User.create(name: 'admin',
-                        email_address: 'admin@site.com',
-                        username: 'admin',
-                        password: 'admin',
-                        role: 1)
-
-    instance_of_app_controller.to receive(:current_user).and_return(admin)
+    sign_in_as(admin)
 
     visit root_path
 
