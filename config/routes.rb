@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get "/cart", to: "carts#show"
   post "/cart", to: "carts#destroy"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: [:new, :create]
+
+  resources :users, only: [:show] do
+    resources :orders
+  end
 
   resources :items, only: [:show, :index, :new, :create]
 

@@ -1,10 +1,51 @@
-<p>
-<% @items.each do |item| %>
-  id: <%= item.id %><br>
-  title: <%= item.title %><br>
-  quantity: <%= item.quantity %>
-<% end %>
-</p>
+<h1>Shopping Cart</h1>
+<br>
+<br>
+<div class="shopping-cart">
 
-<%= button_to "Clear Cart", cart_path, method: :post %>
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
 
+  <% @items.each do |item| %>
+  <div class="product">
+    <div class="product-image">
+      <%= image_tag item.picture.url(:thumb) %><br>
+    </div>
+    <div class="product-details">
+      <div class="product-title"><%= item.title %></div>
+      <p class="product-description"><%= item.description %></p>
+    </div>
+    <div class="product-price"><%= item.price %> </div>
+    <div class="product-quantity">
+      <input type="number" value="2" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product">
+        Remove
+      </button>
+    </div>
+  </div>
+<%end %>
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal"><%= @items.map { |item| item.price }.reduce(:+)%></div>
+    </div>
+    <div class="totals-item">
+      <label>Shipping</label>
+      <div class="totals-value" id="cart-shipping">15.00</div>
+    </div>
+     </div>
+      <% if current_user %>
+        <span class="checkout"><%= button_to "Checkout", user_orders_path(current_user, current_user.orders), method: :post %></span>
+      <% else %>
+           <span class="checkout"><%= button_to "Login", login_path%></span>
+           <span class="checkout"><%= button_to "Clear Cart", cart_path, method: :post %></span>
+         <% end %>
+</div>
