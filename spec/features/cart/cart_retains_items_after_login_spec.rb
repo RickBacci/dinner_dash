@@ -22,7 +22,7 @@ RSpec.describe Cart, type: :feature do
 
     within(".site-wrap") do
       expect(page).to have_content(item.title)
-      expect(page).to have_content("quantity: 1")
+      expect(page).to have_content("1")
     end
   end
 end
