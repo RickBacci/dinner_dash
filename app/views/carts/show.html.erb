@@ -46,7 +46,7 @@
         <span class="checkout"><%= button_to "Checkout", user_orders_path(current_user, current_user.orders), method: :post %></span>
         <span class="checkout"><%= button_to "Clear Cart", cart_path, method: :post %></span>
       <% else %>
-        <span class="checkout"><%= button_to "Checkout", login_path%></span>
+        <span class="checkout"><%= button_to "Checkout", login_path, method: :get %></span>
         <span class="checkout"><%= button_to "Clear Cart", cart_path, method: :post %></span>
       <% end %>
 </div>
