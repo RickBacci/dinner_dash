@@ -18,8 +18,7 @@ RSpec.describe Cart, type: :feature do
     expect(page).to have_content(2)
     expect(page).to have_content(2)
     expect(page).to have_content(10)
-
-    click_link "Checkout"
-    expect(current_path).to be('/login')
+    click_button "Checkout"
+    expect(current_path).to eq('/login')
   end
 end
