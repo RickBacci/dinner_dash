@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.where(retire: false)
+    if current_admin?
+      @items = Item.all
+    else
+      @items = Item.where(retire: false)
+    end
   end
 
   def show

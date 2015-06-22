@@ -14,9 +14,7 @@ describe User, type: :feature do
 
     click_link "Retire"
     click_link "Logout"
-
     visit items_path
-
     expect(page).to_not have_content("Banana")
   end
 end
