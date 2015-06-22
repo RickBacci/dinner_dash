@@ -11,6 +11,8 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
+    if current_user && current_user.orders.count != 0
+      @orders = current_user.orders
+    end
   end
 end
