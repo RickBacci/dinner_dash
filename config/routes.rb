@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  resources :items, only: [:show, :index, :new, :create]
+  resources :items, only: [:show, :index, :new, :create, :update]
 
   resources :categories, only: [:index, :show] do
     resources :items, only: [:index, :show]
