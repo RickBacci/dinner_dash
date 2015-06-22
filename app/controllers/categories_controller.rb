@@ -6,5 +6,16 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+
+    if current_admin?
+      @category_items = @category.items
+    else
+      @category_items = @category.items.where(retire: false)
+    end
+  end
+
+  def update
+    Item.find(params[:id]).update(retire: true)
+    redirect_to category_path(params[:id])
   end
 end
