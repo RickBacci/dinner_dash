@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20150621201241) do
     t.decimal  "price"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "picture"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 20150621201241) do
     t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
