@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/support/sign_in_helpers.rb": [
+      "/Users/richardbacci/dinner_dash/spec/support/sign_in_helpers.rb": [
         1,
         1,
         5,
@@ -56,7 +56,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/support/sign_up_helpers.rb": [
+      "/Users/richardbacci/dinner_dash/spec/support/sign_up_helpers.rb": [
         1,
         1,
         6,
@@ -76,14 +76,14 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/controllers/orders_controller_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/controllers/orders_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/rails_helper.rb": [
+      "/Users/richardbacci/dinner_dash/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -137,14 +137,14 @@
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/environment.rb": [
+      "/Users/richardbacci/dinner_dash/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/application.rb": [
+      "/Users/richardbacci/dinner_dash/config/application.rb": [
         1,
         null,
         1,
@@ -182,12 +182,12 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/boot.rb": [
+      "/Users/richardbacci/dinner_dash/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/environments/test.rb": [
+      "/Users/richardbacci/dinner_dash/config/environments/test.rb": [
         1,
         1,
         null,
@@ -238,7 +238,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/assets.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -251,7 +251,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/backtrace_silencers.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -260,18 +260,18 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/cookies_serializer.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/filter_parameter_logging.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/inflections.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -289,18 +289,18 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/mime_types.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/session_store.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/initializers/wrap_parameters.rb": [
+      "/Users/richardbacci/dinner_dash/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -316,7 +316,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/config/routes.rb": [
+      "/Users/richardbacci/dinner_dash/config/routes.rb": [
         1,
         null,
         1,
@@ -347,15 +347,15 @@
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/helpers/application_helper.rb": [
+      "/Users/richardbacci/dinner_dash/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/helpers/orders_helper.rb": [
+      "/Users/richardbacci/dinner_dash/app/helpers/orders_helper.rb": [
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/orders_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/orders_controller.rb": [
         1,
         1,
         0,
@@ -375,7 +375,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/application_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -405,7 +405,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/admin/admin_creates_item_with_category_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/admin/admin_creates_item_with_category_spec.rb": [
         1,
         null,
         1,
@@ -433,7 +433,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/user.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/user.rb": [
         1,
         1,
         1,
@@ -448,7 +448,7 @@
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/admin/admin_login_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/admin/admin_login_spec.rb": [
         1,
         null,
         1,
@@ -473,7 +473,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/admin/admin_panel_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/admin/admin_panel_spec.rb": [
         1,
         null,
         1,
@@ -507,7 +507,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/cart/add_item_to_cart_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/cart/add_item_to_cart_spec.rb": [
         1,
         null,
         1,
@@ -533,7 +533,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/cart.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/cart.rb": [
         1,
         1,
         null,
@@ -555,7 +555,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/cart/cart_retains_items_after_login_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/cart/cart_retains_items_after_login_spec.rb": [
         1,
         null,
         1,
@@ -585,7 +585,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/cart/unlogged_in_checkout_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/cart/unlogged_in_checkout_spec.rb": [
         1,
         null,
         1,
@@ -626,10 +626,10 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/categories_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/users/categories_spec.rb": [
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/create_new_user_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/users/create_new_user_spec.rb": [
         1,
         null,
         1,
@@ -639,192 +639,6 @@
         1,
         1,
         1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/logged_in_orders_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/unauthenticated_user_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/unlogged_in_cant_see_orders_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/user_login_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/features/users/user_logout_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
         1,
         null,
         1,
@@ -833,20 +647,206 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/models/category_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/users/logged_in_orders_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/richardbacci/dinner_dash/spec/features/users/unauthenticated_user_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/richardbacci/dinner_dash/spec/features/users/unlogged_in_cant_see_orders_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/richardbacci/dinner_dash/spec/features/users/user_login_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/category.rb": [
+      "/Users/richardbacci/dinner_dash/spec/features/users/user_logout_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/richardbacci/dinner_dash/spec/models/category_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/richardbacci/dinner_dash/app/models/category.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/models/item_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/models/item_spec.rb": [
         1,
         null,
         1,
@@ -924,7 +924,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/item.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/item.rb": [
         1,
         1,
         1,
@@ -955,21 +955,21 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/models/order_item_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/models/order_item_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/order_item.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/order_item.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/models/order_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/models/order_spec.rb": [
         1,
         null,
         1,
@@ -983,14 +983,14 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/order.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/order.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/spec/models/user_spec.rb": [
+      "/Users/richardbacci/dinner_dash/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -1051,7 +1051,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/sessions_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -1075,7 +1075,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/categories_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/categories_controller.rb": [
         1,
         1,
         14,
@@ -1087,14 +1087,14 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/admin/dashboard_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/admin/dashboard_controller.rb": [
         1,
         1,
         2,
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/admin/base_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/admin/base_controller.rb": [
         1,
         1,
         null,
@@ -1105,7 +1105,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/items_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/items_controller.rb": [
         1,
         1,
         1,
@@ -1138,13 +1138,13 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/category_item.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/category_item.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/users_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/users_controller.rb": [
         1,
         1,
         9,
@@ -1177,7 +1177,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/controllers/carts_controller.rb": [
+      "/Users/richardbacci/dinner_dash/app/controllers/carts_controller.rb": [
         1,
         1,
         null,
@@ -1200,7 +1200,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/cart_presenter.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/cart_presenter.rb": [
         1,
         1,
         4,
@@ -1218,7 +1218,7 @@
         null,
         null
       ],
-      "/Users/levkravinsky/Desktop/DinnerDash/app/models/item_decorator.rb": [
+      "/Users/richardbacci/dinner_dash/app/models/item_decorator.rb": [
         1,
         null,
         1,
@@ -1231,6 +1231,6 @@
         null
       ]
     },
-    "timestamp": 1434933773
+    "timestamp": 1434934405
   }
 }
