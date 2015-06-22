@@ -1,7 +1,8 @@
 module SignInHelpers
+
   def sign_in_as(user)
     user
-    visit login_path
+    visit '/login'
     fill_in "Username", with: user.name
     fill_in "Password", with: user.password
     click_button "Login"
