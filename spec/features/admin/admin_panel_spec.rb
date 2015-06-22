@@ -13,7 +13,7 @@ describe "Admin", type: :feature do
     expect(page).to have_content("Admin")
   end
 
-  xit 'can add and item to the database' do
+  it 'can add and item to the database' do
     sign_in_as(admin)
 
     visit new_item_path
