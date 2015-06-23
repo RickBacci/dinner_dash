@@ -9,7 +9,7 @@
       <%= link_to "View Item", category_item_path(item.categories, item) %> <br>
 
       <% if current_admin? %>
-        <%= link_to "Retire", category_path(id: item.id), method: :put %>
+        <%= link_to "Retire", category_item_path(@category, item), method: :put %>
       <% end %><br>
     </span>
   <% end %>
