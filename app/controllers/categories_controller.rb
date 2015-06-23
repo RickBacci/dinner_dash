@@ -15,6 +15,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    # byebug
     Item.find(params[:id]).update(retire: true)
     redirect_to category_path(params[:id])
   end
