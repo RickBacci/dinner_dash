@@ -23,7 +23,7 @@
     </div>
     <div class="product-price"><%= item.price %> </div>
     <div class="product-quantity">
-      <input type="number" value="2" min="1">
+      <input type="number" value=<%= item.quantity %> min="1">
     </div>
     <div class="product-removal">
       <button class="remove-product">
@@ -35,7 +35,7 @@
   <div class="totals">
     <div class="totals-item">
       <label>Subtotal</label>
-      <div class="totals-value" id="cart-subtotal"><%= @items.map { |item| item.price }.reduce(:+)%></div>
+      <div class="totals-value" id="cart-subtotal"><%= @items.map { |item| item.price * item.quantity }.reduce(:+)%></div>
     </div>
     <div class="totals-item">
       <label>Shipping</label>

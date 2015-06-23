@@ -1,12 +1,16 @@
 <div class="centered">
-  <% @category.items.each do |item| %>
+  <% @category_items.each do |item| %>
     <span class="item">
       <%= image_tag item.picture.url(:medium) %><br>
       <%= item.title %><br>
       <%= item.description %><br>
       <%= item.price %><br>
       <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
-      <%= link_to "View Item", category_item_path(item.categories, item) %> <br> <br>
+      <%= link_to "View Item", category_item_path(item.categories, item) %> <br>
+
+      <% if current_admin? %>
+        <%= link_to "Retire", category_item_path(@category, item), method: :put %>
+      <% end %><br>
     </span>
   <% end %>
 </div>
