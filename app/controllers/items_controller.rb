@@ -1,10 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    if current_admin?
-      @items = Item.all
-    else
-      @items = Item.where(retire: false)
-    end
+    @items = Item.where(retire: false)
   end
 
   def show
@@ -25,11 +21,6 @@ class ItemsController < ApplicationController
       flash[:notice] = "Item creation failed!"
       render :new
     end
-  end
-
-  def update
-    Item.find(params[:id]).update(retire: true)
-    redirect_to items_path
   end
 
   private

@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :users, only: [:show] do
-    resources :orders
+    resources :orders, except: [:edit, :delete]
   end
 
-  resources :items, only: [:show, :index, :new, :create, :update]
+  resources :items
 
-  resources :categories, only: [:index, :show, :update] do
-    resources :items, only: [:index, :show, :update]
+  resources :categories do
+    resources :items, only: [:index, :show]
   end
 
   get "/login", to: "sessions#new"
@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
+    resources :items
+    resources :categories do
+      resources :items
+    end
   end
   root to: "categories#index"
 end
