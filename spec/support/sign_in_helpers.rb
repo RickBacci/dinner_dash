@@ -1,5 +1,4 @@
 module SignInHelpers
-
   def sign_in_as(user)
     user
     visit '/login'

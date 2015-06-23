@@ -39,7 +39,7 @@ describe Item, type: :feature do
     end
 
     it 'for a title that already exists' do
-      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       2.times { create_item_with(item) }
 
       expect(page).to have_content("Title has already been taken")
@@ -60,19 +60,19 @@ describe Item, type: :feature do
       expect(page).to have_content("Price must be greater than 0")
     end
 
-# An item must belong to at least one category.
+    # An item must belong to at least one category.
     xit 'for having no categories' do
-      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
     end
 
     it 'has a stand-in photo' do
-      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
 
-# add class or id after styled
+      # add class or id after styled
       expect(page).to have_selector("img")
     end
   end
 end
-# The photo is optional. If not present, a stand-in photo is used.
+
