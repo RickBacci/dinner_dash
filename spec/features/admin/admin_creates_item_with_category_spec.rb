@@ -23,4 +23,3 @@ describe User, type: :feature do
     expect(page).to have_content("tropical")
   end
 end
-

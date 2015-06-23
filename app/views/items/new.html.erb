@@ -1,4 +1,14 @@
 
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    <br>
+    <% @item.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+<% end %>
+</br>
 
 <%= form_for @item, url: items_path, html: { :multipart => true } do |f| %>
   <%= f.label :title %>
