@@ -75,4 +75,3 @@ describe Item, type: :feature do
     end
   end
 end
-
