@@ -39,6 +39,7 @@ describe Item, type: :feature do
     end
 
     it 'for a title that already exists' do
+      Category.create(name: "test _category")
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       2.times { create_item_with(item) }
 
