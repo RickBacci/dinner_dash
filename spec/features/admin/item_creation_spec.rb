@@ -2,19 +2,66 @@ require 'rails_helper'
 
 describe Item, type: :feature do
   include SignInHelpers
+  include NewItemHelpers
 
-  it 'gets a descriptive error message for no title' do
+  before do
     sign_in_as(admin)
-    visit admin_dashboard_path
-    click_link "Create item"
-    click_button "Create item"
-    expect(page).to have_content("Title can't be blank")
+  end
+  context 'it gets a descriptive error message' do
+    it 'for no title' do
+      create_item_with(title: nil)
+
+      expect(page).to have_content("Title can't be blank")
+    end
+
+    it 'for no description' do
+      create_item_with(description: nil)
+
+      expect(page).to have_content("Description can't be blank")
+    end
+
+    it 'for no price' do
+      create_item_with(price: nil)
+
+      expect(page).to have_content("Price can't be blank")
+    end
+
+    it 'for an empty string in title' do
+      create_item_with(title: "")
+
+      expect(page).to have_content("Title can't be blank")
+    end
+
+    it 'for an empty string in description' do
+      create_item_with(description: "")
+
+      expect(page).to have_content("Title can't be blank")
+    end
+
+    it 'for a title that already exists' do
+      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      2.times { create_item_with(item) }
+
+      expect(page).to have_content("Title has already been taken")
+    end
+
+    it 'for a non-numeric price' do
+      create_item_with(price: 'price')
+      expect(page).to have_content("Price is not a number")
+    end
+
+    it 'for a price of 0' do
+      create_item_with(price: 0)
+      expect(page).to have_content("Price must be greater than 0")
+    end
+
+    it 'for a price of less than 0' do
+      create_item_with(price: -20.00)
+      expect(page).to have_content("Price must be greater than 0")
+    end
+
 
   end
 end
-# An item must have a title, description, and price.
 # An item must belong to at least one category.
-# The title and description cannot be empty strings.
-# The title must be unique for all items in the system.
-# The price must be a valid decimal numeric value and greater than zero.
 # The photo is optional. If not present, a stand-in photo is used.
