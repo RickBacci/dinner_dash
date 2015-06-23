@@ -60,8 +60,19 @@ describe Item, type: :feature do
       expect(page).to have_content("Price must be greater than 0")
     end
 
+# An item must belong to at least one category.
+    xit 'for having no categories' do
+      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      create_item_with(item)
+    end
 
+    it 'has a stand-in photo' do
+      item = {title: 'item#1', description: 'item#1 description', price: 1.00 }
+      create_item_with(item)
+
+# add class or id after styled
+      expect(page).to have_selector("img")
+    end
   end
 end
-# An item must belong to at least one category.
 # The photo is optional. If not present, a stand-in photo is used.
