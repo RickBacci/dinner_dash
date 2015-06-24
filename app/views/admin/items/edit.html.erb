@@ -1,3 +1,4 @@
+
 <% if @item.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -9,7 +10,7 @@
 <% end %>
 </br>
 
-<%= form_for @item, url: admin_items_path, html: { :multipart => true } do |f| %>
+<%= form_for @item, url: admin_item_path(@item), html: { :multipart => true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -30,5 +31,5 @@
   <%= f.label :category_list %><br/>
   <%= f.text_field :category_list %>
 
-  <%= f.submit "Create Item" %>
+  <%= f.submit "Update Item" %>
 <% end %>

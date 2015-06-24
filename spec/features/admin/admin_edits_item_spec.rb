@@ -15,31 +15,36 @@ describe "As an admin when I edit an item", type: :feature do
 
   context 'I get a descriptive error message' do
     it 'for an invalid title' do
-      edit_item_with(title: nil)
+      new_item = Item.all.first
+      edit_item_with(new_item.id, title: nil)
 
       expect(page).to have_content("Title can't be blank")
     end
 
     it 'for an invalid description' do
-      edit_item_with(description: nil)
+      new_item = Item.all.first
+      edit_item_with(new_item.id, description: nil)
 
       expect(page).to have_content("Description can't be blank")
     end
 
     it 'for an invalid price' do
-      edit_item_with(price: nil)
+      new_item = Item.all.first
+      edit_item_with(new_item.id, price: nil)
 
       expect(page).to have_content("Price can't be blank")
     end
 
     it 'for and empty string as a title' do
-      edit_item_with(title: "")
+      new_item = Item.all.first
+      edit_item_with(new_item.id, title: "")
 
       expect(page).to have_content("Title can't be blank")
     end
 
     it 'for an empty string for the description' do
-      edit_item_with(description: "")
+      new_item = Item.all.first
+      edit_item_with(new_item.id, description: "")
 
       expect(page).to have_content("Description can't be blank")
     end
@@ -51,30 +56,29 @@ describe "As an admin when I edit an item", type: :feature do
                 category: 'test' }
       create_item_with(item2)
 
-      edit_item_with(item2)
+      new_item = Item.all.first
+      edit_item_with(new_item.id, item2)
+
       expect(page).to have_content("Title has already been taken")
     end
+
     it 'for the price not being a valid decimal' do
-      edit_item_with(price: 'price')
+      new_item = Item.all.first
+      edit_item_with(new_item.id, price: 'price')
       expect(page).to have_content("Price is not a number")
     end
 
     it 'for the price being equal to zero' do
-
-      edit_item_with(price: 0)
+      new_item = Item.all.first
+      edit_item_with(new_item.id, price: 0)
       expect(page).to have_content("Price must be greater than 0")
     end
 
     it 'for a price of less than 0' do
+      new_item = Item.all.first
+      edit_item_with(new_item.id, price: -20.00)
 
-      edit_item_with(price: -20.00)
       expect(page).to have_content("Price must be greater than 0")
-    end
-
-    it 'for having no categories' do
-      item = { title: 'item#1', description: 'item#1 description', price: 1.00, category: nil }
-      edit_item_with(item)
-      expect(page).to have_content("Category cannot be empty")
     end
   end
 end
