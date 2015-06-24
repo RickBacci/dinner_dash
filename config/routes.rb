@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :orders, except: [:edit, :delete]
   end
 
-  resources :items
+  resources :items, only: [:index, :show]
 
   resources :categories do
     resources :items, only: [:index, :show]
@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   namespace :admin do
+    resources :items, only: ['/items/retire'] do
+      member do
+        patch '/items/retire', to: 'items#retire'
+      end
+    end
     get '/dashboard', to: 'dashboard#index'
     resources :items
     resources :categories do

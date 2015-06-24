@@ -7,7 +7,10 @@
       <%= item.price %><br>
       <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
       <%= link_to "View Item", category_item_path(item.categories, item) %> <br>
-        <%= link_to "Retire", admin_item_path(id: item.id), method: :put %>
+      <%= link_to "Retire", items_retire_admin_item_path(item.id), method: :patch %>
+      <% if item.retire? %>
+        Item retired!
+      <% end %>
        <br>
     </span>
   <% end %>

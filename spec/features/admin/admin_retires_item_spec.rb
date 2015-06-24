@@ -1,29 +1,23 @@
 require 'rails_helper'
 
-describe User, type: :feature do
+describe "Admin", type: :feature do
   include SignInHelpers
 
-  it 'should retire item' do
+  it 'retire item' do
     item1 = {title: "Apricot", description: "it's orange", price: 2}
     sign_in_as(admin)
 
     category = Category.create(name: "test")
     category.items.create(item1)
 
-    visit admin_categories_path
-    click_link("test")
+    visit admin_items_path
 
     expect(page).to have_content("Apricot")
-
     click_link "Retire"
+    expect(page).to have_content("Item retired!")
 
-    expect(page).to have_content("Apricot")
-    click_link "Logout"
-
-    visit categories_path
-
-    click_link("test")
-
+    visit items_path
     expect(page).to_not have_content("Apricot")
   end
+
 end
