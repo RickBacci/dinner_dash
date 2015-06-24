@@ -27,8 +27,8 @@
   <%= f.label :picture %>
   <%= f.file_field :picture %>
 
-  <%= f.label :category_list %><br/>
-  <%= f.text_field :category_list %>
+  <%= f.label :categories %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
 
   <%= f.submit "Create Item" %>
 <% end %>

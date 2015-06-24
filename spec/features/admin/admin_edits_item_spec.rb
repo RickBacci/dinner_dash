@@ -14,7 +14,7 @@ describe "As an admin when I edit an item", type: :feature do
                category: 'test' }
 
       @item = Item.new(title: 'test', description: 'test desc', price: 1.75)
-      @item.categories.new(name: 'test').save
+      @item.categories.new(name: 'test')#.save
       @item.save
     end
 

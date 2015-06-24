@@ -10,7 +10,7 @@
 <% end %>
 </br>
 
-<%= form_for @item, url: admin_item_path(@item), html: { :multipart => true } do |f| %>
+<%= form_for @item, url: admin_item_path(@item.id), html: { :multipart => true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -28,8 +28,8 @@
   <%= f.label :picture %>
   <%= f.file_field :picture %>
 
-  <%= f.label :category_list %><br/>
-  <%= f.text_field :category_list %>
+  <%= f.label :category_items %><br/>
+  <%= f.text_field :category_items %>
 
   <%= f.submit "Update Item" %>
 <% end %>

@@ -18,7 +18,7 @@ module SignInHelpers
   end
 
   def user
-    User.new(
+    User.create(
       name: 'user',
       email_address: 'user@site.com',
       username: 'user',

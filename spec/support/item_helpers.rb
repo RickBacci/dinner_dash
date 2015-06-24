@@ -13,7 +13,7 @@ module ItemHelpers
     fill_in "Title", with: title
     fill_in "Description", with: description
     fill_in "Price", with: price
-    fill_in "Category list", with: category
+    fill_in "Category items", with: category
 
     click_button "Create Item"
   end
@@ -29,7 +29,7 @@ module ItemHelpers
     fill_in "Title", with: title
     fill_in "Description", with: description
     fill_in "Price", with: price
-    fill_in "Category list", with: category
+    fill_in "Category items", with: category
 
     click_button "Update Item"
   end

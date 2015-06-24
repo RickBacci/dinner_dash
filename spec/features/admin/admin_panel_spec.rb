@@ -21,7 +21,9 @@ describe "Admin", type: :feature do
     fill_in "Title", with: "Totally Awesome"
     fill_in "Description", with: "Awesome Description"
     fill_in "Price", with: "100"
-    fill_in "Category list", with: "Whatever"
+
+    #fill_in "Category Items", with: "Whatever"
+    fill_in "item_category_items", with: "Whatever"
 
     attach_file "item_picture", "spec/asset_specs/photos/test.png"
 
