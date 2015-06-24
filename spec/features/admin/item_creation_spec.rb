@@ -40,11 +40,21 @@ describe Item, type: :feature do
     it 'for a title that already exists' do
       item = { title: 'item#1',
                description: 'item#1 description',
-               price: 1.00,
-               category: 'test' }
+               price: 1.00 }
+      original = Item.new(item)
+      original.categories.new(name: 'original').save
+      original.save
 
-      2.times { create_item_with(item) }
+      item2 = { title: 'item#2',
+               description: 'item#2 description',
+               price: 1.00 }
+      original = Item.new(item2)
+      original.categories.new(name: 'original').save
+      original.save
 
+      visit edit_admin_item_path(Item.all.first.id)
+      fill_in "Title", with: 'item#2'
+      click_button 'Update item'
       expect(page).to have_content("Title has already been taken")
     end
 
@@ -67,7 +77,7 @@ describe Item, type: :feature do
     it 'for having no categories' do
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
-      expect(page).to have_content('Category cannot be blank')
+      expect(page).to have_content("Categories can't be blank")
     end
 
     it 'has a stand-in photo' do

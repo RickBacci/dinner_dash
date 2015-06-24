@@ -4,19 +4,22 @@ describe "As an admin when I edit an item", type: :feature do
   include SignInHelpers
   include ItemHelpers
 
-  before do
-    sign_in_as(admin)
-    item = { title: 'item#1',
-             description: 'item#1 description',
-             price: 1.00,
-             category: 'test' }
-    create_item_with(item)
-  end
-
   context 'I get a descriptive error message' do
+    before do
+      sign_in_as(admin)
+
+      item = { title: 'item#1',
+               description: 'item#1 description',
+               price: 1.00,
+               category: 'test' }
+
+      @item = Item.new(title: 'test', description: 'test desc', price: 1.75)
+      @item.categories.new(name: 'test').save
+      @item.save
+    end
+
     it 'for an invalid title' do
-      new_item = Item.all.first
-      edit_item_with(new_item.id, title: nil)
+      edit_item_with(@item.id, title: nil)
 
       expect(page).to have_content("Title can't be blank")
     end
@@ -52,12 +55,13 @@ describe "As an admin when I edit an item", type: :feature do
     it 'for not having a unique title' do
       item2 = { title: 'item#2',
                 description: 'item#2 description',
-                price: 1.00,
-                category: 'test' }
-      create_item_with(item2)
+                price: 1.00 }
 
-      new_item = Item.all.first
-      edit_item_with(new_item.id, item2)
+      second_item = Item.new(item2)
+      second_item.categories.new(name: 'test').save
+      second_item.save
+
+      edit_item_with(@item.id, item2)
 
       expect(page).to have_content("Title has already been taken")
     end

@@ -1,9 +1,13 @@
 module ItemHelpers
   def create_item_with(attributes)
-    title = attributes[:title].nil? ? nil : attributes[:title]
-    description = attributes[:description].nil? ? nil : attributes[:description]
-    price = attributes[:price].nil? ? nil : attributes[:price]
-    category = attributes[:category].nil? ? nil : attributes[:category]
+    # title = attributes[:title].nil? ? nil : attributes[:title]
+    # description = attributes[:description].nil? ? nil : attributes[:description]
+    # price = attributes[:price].nil? ? nil : attributes[:price]
+    # category = attributes[:category].nil? ? nil : attributes[:category]
+    title = attributes[:title]
+    description = attributes[:description]
+    price = attributes[:price]
+    category = attributes[:category]
 
     visit new_admin_item_path
     fill_in "Title", with: title
