@@ -16,7 +16,7 @@ describe "Admin", type: :feature do
   it 'can add and item to the database' do
     sign_in_as(admin)
 
-    visit new_item_path
+    visit new_admin_item_path
 
     fill_in "Title", with: "Totally Awesome"
     fill_in "Description", with: "Awesome Description"

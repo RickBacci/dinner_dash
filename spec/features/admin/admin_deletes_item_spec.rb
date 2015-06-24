@@ -3,7 +3,7 @@ require 'rails_helper'
 describe User, type: :feature do
   include SignInHelpers
 
-  it 'should retire item' do
+  it 'should delete item' do
     item1 = {title: "Apricot", description: "it's orange", price: 2}
     sign_in_as(admin)
 
@@ -15,9 +15,9 @@ describe User, type: :feature do
 
     expect(page).to have_content("Apricot")
 
-    click_link "Retire"
+    click_link "Delete"
+    expect(page).to_not have_content("Apricot")
 
-    expect(page).to have_content("Apricot")
     click_link "Logout"
 
     visit categories_path

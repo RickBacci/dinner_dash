@@ -1,10 +1,10 @@
-class ItemsController < ApplicationController
+class Admin::ItemsController < Admin::BaseController
   def index
-    @items = Item.where(retire: false)
+    @items = Item.all
   end
 
-  def show
-    @item = Item.find(params[:id])
+  def new
+    @item = Item.new
   end
 
   def create
@@ -15,8 +15,18 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:notice] = "Item creation failed!"
-      render new_admin_item_path
+      redirect_to new_admin_item_path
     end
+  end
+
+  def update
+    Item.find(params[:id]).update(retire: true)
+    redirect_to admin_items_path
+  end
+
+  def destroy
+    Item.find(params[:id]).destroy
+    redirect_to categories_path
   end
 
   private

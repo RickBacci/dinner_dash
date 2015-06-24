@@ -10,7 +10,6 @@ describe Item, type: :feature do
   context 'it gets a descriptive error message' do
     it 'for no title' do
       create_item_with(title: nil)
-
       expect(page).to have_content("Title can't be blank")
     end
 
@@ -39,6 +38,7 @@ describe Item, type: :feature do
     end
 
     it 'for a title that already exists' do
+      Category.create(name: "test _category")
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       2.times { create_item_with(item) }
 
@@ -61,7 +61,7 @@ describe Item, type: :feature do
     end
 
     # An item must belong to at least one category.
-    xit 'for having no categories' do
+    it 'for having no categories' do
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
     end
