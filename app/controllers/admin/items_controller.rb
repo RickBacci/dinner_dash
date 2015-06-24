@@ -28,4 +28,10 @@ class Admin::ItemsController < Admin::BaseController
     Item.find(params[:id]).destroy
     redirect_to categories_path
   end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:title, :description, :price, :picture, :category_list)
+  end
 end
