@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # move this to line_items#create
 
   get "/cart", to: "carts#show"
-  post "/cart", to: "carts#destroy"
+  delete "/cart", to: "carts#destroy"
+  put "/cart", to: "carts#update"
 
   resources :users, only: [:new, :create]
 
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
     put 'items/:id', to: 'items#update_status', :as => 'item_status' # custom route to update_status action!!!
 
     resources :items
-
+    resources :orders
     resources :categories do
       resources :items
     end
