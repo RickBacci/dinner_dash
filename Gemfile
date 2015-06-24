@@ -22,7 +22,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 gem 'bourbon'
-
+gem 'aasm'
 gem 'figaro'
 gem 'paperclip'
 gem 'aws-sdk', '<=2.0'

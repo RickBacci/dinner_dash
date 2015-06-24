@@ -1,4 +1,5 @@
-class AddQuantityToOrderItems < ActiveRecord::Migration
+class Add
+  QuantityToOrderItems < ActiveRecord::Migration
   def change
     add_column :order_items, :quantity, :integer
   end
