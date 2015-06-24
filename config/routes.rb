@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
 
-    put 'items/:id', to: 'items#update_status', :as => 'item_status' # custom route to update_status action!!!
+    put 'items/:id', to: 'items#retire_item', :as => 'item_status' # custom route to update_status action!!!
 
     resources :items
 
