@@ -7,24 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if current_admin? %>
+  <ul class="navigation">
+    <li class="nav-item"><a href="/admin/categories">Categories</a></li>
+    <li class="nav-item"><a href="/admin/items">Items</a></li>
+    <li class="nav-item"><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
+    <li class="nav-item"><a rel="nofollow" data-method="get" href="/admin/dashboard">Admin</a></li>
+  </ul>
+<% elsif current_user %>
   <ul class="navigation">
     <li class="nav-item"><a href="/categories">Categories</a></li>
     <li class="nav-item"><a href="/items">Items</a></li>
     <li class="nav-item"><a href="/cart">Cart <%= @cart.count_all %></a></li>
-    <% if current_user %>
-      <li class="nav-item"><a href="/users/<%= current_user.id%>/orders">Orders</a></li>
-      <li class="nav-item"><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
-    <% else %>
-      <li class="nav-item"><a href="/login">Login</a></li>
-      <li class="nav-item"><a href="/users/new">Signup</a></li>
-    <% end %>
-
-    <% if current_admin? %>
-    <li class="nav-item"><a rel="nofollow" data-method="get" href="/admin/dashboard">Admin</a></li>
-    <% end %>
+    <li class="nav-item"><a href="/users/<%= current_user.id%>/orders">Orders</a></li>
+    <li class="nav-item"><a rel="nofollow" data-method="delete" href="/logout">Logout</a></li>
   </ul>
-
+<% else current_user == false %>
+  <ul class= "navigation">
+    <li class="nav-item"><a href="/categories">Categories</a></li>
+    <li class="nav-item"><a href="/items">Items</a></li>
+    <li class="nav-item"><a href="/cart">Cart <%= @cart.count_all %></a></li>
+    <li class="nav-item"><a href="/login">Login</a></li>
+    <li class="nav-item"><a href="/users/new">Signup</a></li>
+  </ul>
+<% end %>
 
   <input type="checkbox" id="nav-trigger" class="nav-trigger" />
   <label for="nav-trigger"></label>
