@@ -19,14 +19,9 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
-  def update
+  def update_status
     Item.find(params[:id]).update(retire: true)
     redirect_to admin_items_path
-  end
-
-  def destroy
-    Item.find(params[:id]).destroy
-    redirect_to categories_path
   end
 
   private
