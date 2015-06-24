@@ -14,8 +14,21 @@ class CartsController < ApplicationController
     @items = CartPresenter.new(@cart).items
   end
 
+  def update
+    @cart.update_item(params[:item_id], params[:quantity])
+    flash[:notice] = "Item quantity updated"
+    redirect_to cart_path
+  end
+
+ # def destroy
+ #   session[:cart] = {}
+ #   redirect_to :back
+ # end
+
+
   def destroy
-    session[:cart] = {}
-    redirect_to :back
+    @cart.remove_item(params[:item_id])
+    flash[:alert] = "Item removed from cart"
+    redirect_to cart_path
   end
 end
