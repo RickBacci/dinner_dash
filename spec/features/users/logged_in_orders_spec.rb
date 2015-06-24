@@ -14,12 +14,12 @@ RSpec.describe User, type: :feature do
 
     jeff = User.find_by(username: "j3")
     jeff.orders.create(order_date: "2015-06-21 19:54:36",
-                       status: "pending",
+                       status: "paid",
                        created_at: "2015-06-21 19:54:36",
                        updated_at: "2015-06-21 19:54:36")
 
     visit user_orders_path(jeff)
-    expect(page).to have_content("pending")
+    expect(page).to have_content("paid")
   end
 end
 
