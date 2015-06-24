@@ -10,7 +10,6 @@ describe Item, type: :feature do
   context 'it gets a descriptive error message' do
     it 'for no title' do
       create_item_with(title: nil)
-save_and_open_page
       expect(page).to have_content("Title can't be blank")
     end
 

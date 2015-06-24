@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:notice] = "Item creation failed!"
-      redirect_to new_admin_item_path
+      render new_admin_item_path
     end
   end
 
