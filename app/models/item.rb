@@ -14,7 +14,7 @@ class Item < ActiveRecord::Base
   validates :title, presence: true, allow_blank: false, uniqueness: true
   validates :description, presence: true
   validates :price, presence: true, numericality: { only: :decimal, greater_than: 0 }
-#  validates :categories, presence: true
+  validates :categories, presence: true
 
   def category_list=(categories_string)
     category_names = categories_string.split(",").collect{|s| s.strip.downcase}.uniq

@@ -1,17 +1,26 @@
 require 'rails_helper'
 
 describe Item, type: :model do
+  before do
+    @item = Item.new(valid_attributes)
+    @item.categories.new(name: 'test').save
+    @item.save
+  end
+
   def valid_attributes
     {
       title: "Item#1",
       description: "Super cool item",
-      price: 1.99,
-      picture: nil
+      price: 1.99
     }
   end
 
   it 'should be valid' do
-    expect(Item.new(valid_attributes)).to be_valid
+    item = Item.new(valid_attributes)
+    item.categories.new(name: 'test').save
+    item.save
+
+    expect(@item).to be_valid
   end
 
   it 'must have a title' do
@@ -62,15 +71,10 @@ describe Item, type: :model do
   end
 
   it 'must belong to at least one category' do
-    item = Item.create(valid_attributes)
-    item.categories.create(name: 'category1')
-
-    expect(Item.first.categories).to_not be_empty
+    expect(@item.categories).to_not be_empty
   end
 
   it 'can be created without a photo' do
-    item = Item.create(valid_attributes)
-
-    expect(item).to be_valid
+    expect(@item.picture_file_name).to be_nil
   end
 end
