@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Item, type: :feature do
   include SignInHelpers
-  include NewItemHelpers
+  include ItemHelpers
 
   before do
     sign_in_as(admin)
@@ -38,8 +38,11 @@ describe Item, type: :feature do
     end
 
     it 'for a title that already exists' do
-      Category.create(name: "test _category")
-      item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
+      item = { title: 'item#1',
+               description: 'item#1 description',
+               price: 1.00,
+               category: 'test' }
+
       2.times { create_item_with(item) }
 
       expect(page).to have_content("Title has already been taken")
@@ -64,6 +67,7 @@ describe Item, type: :feature do
     it 'for having no categories' do
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
+      expect(page).to have_content('Category cannot be blank')
     end
 
     it 'has a stand-in photo' do
