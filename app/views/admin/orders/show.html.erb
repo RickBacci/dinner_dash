@@ -10,7 +10,11 @@
     <label class="product-quantity">Quantity</label>
     <label class="product-line-price">Total</label>
   </div>
-
+  <%= @order.user.name %>
+  <br>
+  <%= @order.user.email_address %>
+  <br>
+  <br>
   <% @order_items.each do |order_item| %>
   <div class="product">
     <div class="product-image">
@@ -22,7 +26,7 @@
     </div>
     <div class="product-price"><%= order_item.item.price %> </div>
     <div class="product-quantity">
-      <input type="number" value=<%= order_item.quantity %> min="1">
+      <%= order_item.quantity %>
     </div>
     <div class="product-line-price">
       <%= order_item.item.price * order_item.quantity %>
