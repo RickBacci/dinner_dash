@@ -1,17 +1,16 @@
 class Admin::CategoriesController < Admin::BaseController
   def index
-    @user = User.find(session[:user_id]) if session[:user_id]
     @categories = Category.all
   end
 
   def update
     Item.find(params[:id]).update(retire: true)
-    redirect_to category_path(params[:id])
+    redirect_to admin_category_path(params[:id])
   end
 
   def destroy
     Item.find(params[:id]).destroy
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   def show

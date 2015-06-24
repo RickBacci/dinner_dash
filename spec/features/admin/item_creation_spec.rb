@@ -61,7 +61,7 @@ describe Item, type: :feature do
     end
 
     # An item must belong to at least one category.
-    xit 'for having no categories' do
+    it 'for having no categories' do
       item = { title: 'item#1', description: 'item#1 description', price: 1.00 }
       create_item_with(item)
     end

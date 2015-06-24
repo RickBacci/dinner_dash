@@ -21,7 +21,7 @@ class Admin::ItemsController < Admin::BaseController
 
   def update
     Item.find(params[:id]).update(retire: true)
-    redirect_to items_path
+    redirect_to admin_items_path
   end
 
   def destroy

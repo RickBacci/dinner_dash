@@ -1,5 +1,5 @@
 <div class="centered">
-  <% @category_items.each do |item| %>
+  <% @category.items.each do |item| %>
     <span class="item">
       <%= image_tag item.picture.url(:medium) %><br>
       <%= item.title %><br>
