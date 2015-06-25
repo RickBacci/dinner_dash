@@ -35,9 +35,9 @@ Rails.application.routes.draw do
 
     resources :items
     resources :orders
-#    resources :categories do
-#      resources :items
-#    end
+   resources :categories do
+     resources :items
+   end
   end
   root to: "categories#index"
 end
