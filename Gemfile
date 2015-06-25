@@ -21,7 +21,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+gem 'bitters'
 gem 'bourbon'
+gem 'neat'
+
 gem 'aasm'
 gem 'figaro'
 gem 'paperclip'
