@@ -28,8 +28,8 @@
   <%= f.label :picture %>
   <%= f.file_field :picture %>
 
-  <%= f.label :category_items %><br/>
-  <%= f.text_field :category_items %>
+  <%= f.label :categories %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
 
   <%= f.submit "Update Item" %>
 <% end %>
