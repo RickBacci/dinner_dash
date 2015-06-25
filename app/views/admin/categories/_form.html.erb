@@ -1,0 +1,22 @@
+<% if @category.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+    <br>
+    <% @category.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+<% end %>
+</br>
+<%= form_for @category, url: admin_categories_path, html: { :multipart => true } do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <% if @category.image.exists? %>
+      <%= image_tag @category.image.url %><br/>
+    <%= f.label :image, "Attach a New Image" %><br />
+    <%= f.file_field :image %>
+  <% end %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.submit "Submit" %>
+<% end %>
