@@ -10,25 +10,31 @@
 </br>
 
 <%= form_for @item, url: admin_items_path, html: { :multipart => true } do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <br />
+  <br />
+  <%= f.label :title %> <br />
+  <%= f.text_field :title %><br />
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.label :description %><br />
+  <%= f.text_area :description %><br />
 
-  <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.label :price %><br />
+
+  <%= f.text_field :price %><br />
+
 
   <% if @item.picture.exists? %>
       <%= image_tag @item.picture.url %><br/>
     <%= f.label :picture, "Attach a New Picture" %><br />
     <%= f.file_field :picture %>
   <% end %>
-  <%= f.label :picture %>
+  <br />
+  <%= f.label :picture %><br />
   <%= f.file_field :picture %>
-
-  <%= f.label :categories %>
+  <br /><br />
+  <%= f.label :categories %><br />
+  <br />
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-
+  <br />
   <%= f.submit "Create Item" %>
 <% end %>
