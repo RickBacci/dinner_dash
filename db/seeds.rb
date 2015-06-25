@@ -74,7 +74,31 @@ class Seed
        email_address: "admin@admin.com",
        username: "admin",
        password: "admin",
-       role: 1]
+       role: 1],
+
+       [name: "Rachel Warbelow",
+       email_address: "demo+rachel@jumpstartlab.com",
+       password: "password",
+       username: "",
+       role: 0],
+
+       [name: "Jeff Casimir",
+       email_address: "demo+jeff@jumpstartlab.com",
+       password: "password",
+       username: "j3",
+       role: 0],
+
+       [name: "Jorge Tellez",
+       email_address: "demo+jorge@jumpstartlab.com",
+       password: "password",
+       username: "novohispano",
+       role: 0],
+
+       [name: "Josh cheek",
+       email_address: "demo+josh@jumpstartlab.com",
+       password: "password",
+       username: "josh",
+       role: 1],
     ]
   end
 end
