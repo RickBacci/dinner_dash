@@ -18,10 +18,23 @@ class Admin::CategoriesController < Admin::BaseController
       render :new
     end
   end
-  # def update
-  #   Item.find(params[:id]).update(retire: true)
-  #   redirect_to admin_category_path(params[:id])
-  # end
+
+  def edit
+    @category = Category.new
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+
+    if @category.save
+      flash[:notice] = "Category successfully edited"
+      redirect_to admin_category_path(params[:id])
+    else
+      flash[:notice] = "Category un-successfully edited"
+      render :edit
+    end
+  end
 
   def destroy
     Item.find(params[:id]).destroy
@@ -35,6 +48,6 @@ class Admin::CategoriesController < Admin::BaseController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :image)
   end
 end
