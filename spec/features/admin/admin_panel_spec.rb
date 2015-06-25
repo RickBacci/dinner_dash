@@ -14,6 +14,8 @@ describe "Admin", type: :feature do
   end
 
   it 'can add and item to the database' do
+    Category.create(name: 'test')
+
     sign_in_as(admin)
 
     visit new_admin_item_path
@@ -21,9 +23,7 @@ describe "Admin", type: :feature do
     fill_in "Title", with: "Totally Awesome"
     fill_in "Description", with: "Awesome Description"
     fill_in "Price", with: "100"
-
-    #fill_in "Category Items", with: "Whatever"
-    fill_in "item_category_items", with: "Whatever"
+    check 'test'
 
     attach_file "item_picture", "spec/asset_specs/photos/test.png"
 

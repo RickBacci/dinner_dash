@@ -4,11 +4,11 @@ describe "Admin", type: :feature do
   include SignInHelpers
 
   it 'retire item' do
-    item1 = {title: "Apricot", description: "it's orange", price: 2}
-    sign_in_as(admin)
+    item1 = Item.new(title: "Apricot", description: "it's orange", price: 2)
+    item1.categories.new(name: 'test')
+    item1.save
 
-    category = Category.create(name: "test")
-    category.items.create(item1)
+    sign_in_as(admin)
 
     visit admin_items_path
 

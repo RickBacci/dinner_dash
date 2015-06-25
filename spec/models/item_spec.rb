@@ -71,7 +71,9 @@ describe Item, type: :model do
   end
 
   it 'must belong to at least one category' do
-    expect(@item.categories).to_not be_empty
+    item = Item.new(title: 'test', description: 'desc', price: 3.00)
+
+    expect(item).to be_invalid
   end
 
   it 'can be created without a photo' do
