@@ -31,12 +31,10 @@ Rails.application.routes.draw do
     end
     get '/dashboard', to: 'dashboard#index'
 
-#    put 'items/:id', to: 'items#retire_item', :as => 'item_status' # custom route to update_status action!!!
-
-    resources :items
+    resources :items, except: [:destroy]
     resources :orders, except: [:create, :new, :update, :destroy]
    resources :categories do
-     resources :items
+     resources :items, except: [:destroy]
    end
   end
   root to: "categories#index"
