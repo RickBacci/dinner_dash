@@ -36,7 +36,7 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
-  def update_status
+  def retire_item
     Item.find(params[:id]).update(retire: true)
     redirect_to admin_items_path
   end
