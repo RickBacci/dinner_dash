@@ -2,7 +2,11 @@ require "rails_helper"
 
 RSpec.describe Cart, type: :feature do
   scenario "cart retains items after user logs in" do
-    item = Item.create(title: "banana", description: "sweet", price: 1)
+    item = Item.new(title: "banana", description: "sweet", price: 1)
+    item.categories.new(name: 'test').save
+    item.save
+
+    #item = Item.create(title: "banana", description: "sweet", price: 1)
     user = User.create(name: "Bam", email_address: "email@address.com", username: "bambam", password: "pass" )
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     # creates a current_user

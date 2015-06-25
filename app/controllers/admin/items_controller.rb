@@ -8,18 +8,40 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
 
     if @item.save
       flash[:notice] = "Item created!"
       redirect_to @item
     else
       flash[:notice] = "Item creation failed!"
-      redirect_to new_admin_item_path
+      render new_admin_item_path
     end
   end
 
-  def retire_item
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def show
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+
+    if @item.save
+      flash[:notice] = "Item updated!"
+      redirect_to admin_items_path
+    else
+      flash[:notice] = "Unable to update item"
+      render '/admin/items/new'
+    end
+  end
+
+  def retire
+  #def retire_item
     Item.find(params[:id]).update(retire: true)
     redirect_to admin_items_path
   end
@@ -27,6 +49,11 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :picture, :category_list)
+    params.require(:item).permit(:title,
+                                 :description,
+                                 :price,
+                                 :retire,
+                                 category_ids: [])
+
   end
 end

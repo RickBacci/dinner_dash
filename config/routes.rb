@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :orders, except: [:edit, :delete]
   end
 
-  resources :items
+  resources :items, only: [:index, :show]
 
   resources :categories do
     resources :items, only: [:index, :show]
@@ -24,15 +24,20 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   namespace :admin do
+    resources :items, only: ['/items/retire'] do
+      member do
+        patch '/items/retire', to: 'items#retire'
+      end
+    end
     get '/dashboard', to: 'dashboard#index'
 
-    put 'items/:id', to: 'items#retire_item', :as => 'item_status' # custom route to update_status action!!!
+#    put 'items/:id', to: 'items#retire_item', :as => 'item_status' # custom route to update_status action!!!
 
     resources :items
     resources :orders
-    resources :categories do
-      resources :items
-    end
+   resources :categories do
+     resources :items
+   end
   end
   root to: "categories#index"
 end

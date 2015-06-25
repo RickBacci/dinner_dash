@@ -8,27 +8,23 @@ describe User, type: :feature do
   scenario "user views index page" do
     category = Category.create(name: "cheap smoothies")
 
-    category.items.create(title: "Sample Item 1",
-                          description: "best item ever",
-                          price: 35)
-    category.items.create(title: "Sample Item 2",
-                          description: "best item ever",
-                          price: 35)
-    category.items.create(title: "Sample Item 3",
-                          description: "best item ever",
-                          price: 35)
+    #category.items.create(title: "Sample Item 1",
+    item1 = Item.new(title: "Sample Item 1",
+                     description: "best item ever",
+                     price: 35)
+    item1.categories.new(name: 'cheap smoothies')
+    item1.save
 
     visit category_items_path(category.id)
 
     expect(page).to have_content("Sample Item 1")
-    expect(page).to have_content("Sample Item 2")
-    expect(page).to have_content("Sample Item 3")
   end
 
   scenario "user views categories page" do
     Category.create(name: "category 1")
     Category.create(name: "category 2")
     Category.create(name: "category 3")
+
     visit categories_path
 
     expect(page).to have_content("category 1")

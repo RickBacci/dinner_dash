@@ -2,8 +2,13 @@ require "rails_helper"
 
 RSpec.describe Cart, type: :feature do
   scenario "unlogged in user tries to checkout" do
-    item1 = Item.create(title: "yams!", description: "yammy", price: 2)
+    item1 = Item.new(title: "yams!", description: "yammy", price: 2)
+    item1.categories.new(name: 'test').save
+    item1.save
+
     item2 = Item.create(title: "clams!", description: "clammy", price: 8)
+    item2.categories.new(name: 'test').save
+    item2.save
 
     visit item_path(item1.id)
     click_button "Add To Cart"
