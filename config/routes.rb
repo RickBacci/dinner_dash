@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :users, only: [:show] do
-    resources :orders, except: [:edit, :delete]
+    resources :orders, except: [:edit, :delete, :new, :update, :destroy]
   end
 
   resources :items, only: [:index, :show]
 
-  resources :categories do
+  resources :categories, only: [:index, :show] do
     resources :items, only: [:index, :show]
   end
 
