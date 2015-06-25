@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-
   resources :carts, only: [:create]
   # move this to line_items#create
 
-  get "/cart", to: "carts#show"
-  delete "/cart", to: "carts#destroy"
-  put "/cart", to: "carts#update"
+  get '/cart', to: 'carts#show'
+  delete '/cart', to: 'carts#destroy'
+  put '/cart', to: 'carts#update'
 
   resources :users, only: [:new, :create]
 
@@ -19,9 +18,9 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show]
   end
 
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   namespace :admin do
     resources :items, only: ['/items/retire'] do
@@ -33,9 +32,9 @@ Rails.application.routes.draw do
 
     resources :items, except: [:destroy]
     resources :orders, except: [:create, :new, :update, :destroy]
-   resources :categories do
-     resources :items, except: [:destroy]
-   end
+    resources :categories do
+      resources :items, except: [:destroy]
+    end
   end
-  root to: "categories#index"
+  root to: 'categories#index'
 end

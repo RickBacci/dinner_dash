@@ -9,8 +9,8 @@ describe Item, type: :model do
 
   def valid_attributes
     {
-      title: "Item#1",
-      description: "Super cool item",
+      title: 'Item#1',
+      description: 'Super cool item',
       price: 1.99
     }
   end
@@ -32,7 +32,7 @@ describe Item, type: :model do
 
   it 'cannot have an empty string for a title' do
     item = Item.new(valid_attributes)
-    item.title = ""
+    item.title = ''
 
     expect(item).to_not be_valid
   end
@@ -59,7 +59,7 @@ describe Item, type: :model do
   end
   it 'price must be a valid decimal numeric value' do
     item = Item.new(valid_attributes)
-    item.price = "not a decimal"
+    item.price = 'not a decimal'
 
     expect(item).to be_invalid
   end

@@ -15,28 +15,28 @@ describe User, type: :model do
   end
 
   it 'name should not be valid with only spaces' do
-    user.name = "     "
+    user.name = '     '
 
     expect(user).to_not be_valid
   end
 
   it 'username should not be valid with less than 2 characters' do
-    user.username = "x"
+    user.username = 'x'
 
     expect(user).to_not be_valid
   end
 
   it 'username should not be valid with more than 32 characters' do
-    user.username = "x" * 33
+    user.username = 'x' * 33
 
     expect(user).to_not be_valid
   end
 
   it 'can leave the username blank and their full name will be used' do
-    user = User.create(name: "name",
-                       email_address: "user@email.com",
+    user = User.create(name: 'name',
+                       email_address: 'user@email.com',
                        username: nil,
-                       password: "pass")
+                       password: 'pass')
 
     expect(user).to_not be_valid
   end
@@ -49,10 +49,10 @@ describe User, type: :model do
 
   it 'should have a unique email address' do
     jeff
-    User.last.update(username: "username2")
+    User.last.update(username: 'username2')
     User.create(valid_attributes)
 
-    email_count = User.where(email_address: "demo+jeff@jumpstartlab.com").count
+    email_count = User.where(email_address: 'demo+jeff@jumpstartlab.com').count
 
     expect(email_count).to eq(1)
   end

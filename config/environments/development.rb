@@ -1,11 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = '/usr/local/bin/'
 
   config.paperclip_defaults = {
-    path: ":rails_root/public/development/:attachment/:id/:style/:filename",
-    url: "/development/:attachment/:id/:style/:filename"
+    path: ':rails_root/public/development/:attachment/:id/:style/:filename',
+    url: '/development/:attachment/:id/:style/:filename'
   }
 
   # use s3 for development instead of local filesystem

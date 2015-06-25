@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user_orders = @user.orders
     else
-      render file: "/public/404" unless users_page?
+      render file: '/public/404' unless users_page?
     end
   end
 
