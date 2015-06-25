@@ -8,10 +8,10 @@ describe "As an admin", type: :feature do
       sign_in_as(admin)
     end
 
-    xit 'I can enter a name' do
+    it 'I can enter a name' do
       visit new_admin_category_path
-
-      fill_in "Name", with: "category"
+      save_and_open_page
+      fill_in "Category Name", with: "category"
 
       attach_file "category_picture", "spec/asset_specs/photos/test.png"
 

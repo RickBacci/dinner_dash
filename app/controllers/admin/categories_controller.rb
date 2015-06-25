@@ -37,8 +37,14 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    Item.find(params[:id]).destroy
-    redirect_to admin_categories_path
+    @category = Category.find(params[:id])
+    if @category.destroy
+      flash[:notice] = "Category successfully destroyed"
+      redirect_to admin_categories_path
+    else
+      flash[:notice] = "Category not destroyed"
+      redirect_to admin_categories_path
+    end
   end
 
   def show
