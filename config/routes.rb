@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     end
     get '/dashboard', to: 'dashboard#index'
 
-    put 'items/:id', to: 'items#update_status', :as => 'item_status' # custom route to update_status action!!!
+#    patch 'items/:id', to: 'items#update_status', :as => 'item_status' # custom route to update_status action!!!
 
     resources :items
     resources :orders

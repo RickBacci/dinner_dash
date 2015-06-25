@@ -8,7 +8,7 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
 
     if @item.save
       flash[:notice] = "Item created!"
@@ -36,7 +36,7 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
-  def update_status
+  def retire
     Item.find(params[:id]).update(retire: true)
     redirect_to admin_items_path
   end
@@ -44,6 +44,11 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, category_ids: [])
+    params.require(:item).permit(:title,
+                                 :description,
+                                 :price,
+                                 :retire,
+                                 category_ids: [])
+
   end
 end
