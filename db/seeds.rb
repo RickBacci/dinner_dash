@@ -4,8 +4,8 @@ class Seed
   end
 
   def generate
-    create_items
-    create_users
+    # create_items
+    # create_users
   end
 
   def create_items
