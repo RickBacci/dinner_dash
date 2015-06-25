@@ -8,32 +8,25 @@ describe "As an admin when I edit an item", type: :feature do
     before do
       sign_in_as(admin)
 
-      item = { title: 'item#1',
-               description: 'item#1 description',
-               price: 1.00,
-               category: 'test' }
-
-      @item = Item.new(title: 'test', description: 'test desc', price: 1.75)
-      @item.categories.new(name: 'test')#.save
+      @item = Item.new(title: 'title', description: 'desc', price: 1.75)
+      @item.categories.new(name: 'testing')
       @item.save
     end
 
     it 'for an invalid title' do
-      edit_item_with(@item.id, title: nil)
-
+      edit_item_with(@item.id, title:"")
       expect(page).to have_content("Title can't be blank")
     end
 
     it 'for an invalid description' do
-      new_item = Item.all.first
-      edit_item_with(new_item.id, description: nil)
+      edit_item_with(@item.id, description: "")
 
       expect(page).to have_content("Description can't be blank")
     end
 
     it 'for an invalid price' do
       new_item = Item.all.first
-      edit_item_with(new_item.id, price: nil)
+      edit_item_with(new_item.id, price: "")
 
       expect(page).to have_content("Price can't be blank")
     end
@@ -58,7 +51,7 @@ describe "As an admin when I edit an item", type: :feature do
                 price: 1.00 }
 
       second_item = Item.new(item2)
-      second_item.categories.new(name: 'test').save
+      second_item.categories.new(name: 'test2').save
       second_item.save
 
       edit_item_with(@item.id, item2)

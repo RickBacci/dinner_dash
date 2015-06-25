@@ -1,5 +1,4 @@
 module ItemHelpers
-
   def create_item_with(title: 'item',
                        description: 'description',
                        price: 3.00)
@@ -16,10 +15,10 @@ module ItemHelpers
   def edit_item_with(item_id, attributes)
     Category.create(name: 'test')
     item = Item.find(item_id)
-    title = attributes[:title].presence || item.title
-    description = attributes[:description].presence || item.description
-    price = attributes[:price].presence || item.price
-    category = attributes[:category].presence || 'test'
+    title = attributes[:title] || item.title
+    description = attributes[:description] || item.description
+    price = attributes[:price] || item.price
+    category = attributes[:category] || 'test'
 
     visit edit_admin_item_path(item_id)
 
