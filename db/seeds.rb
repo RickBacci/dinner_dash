@@ -5,7 +5,7 @@ class Seed
 
   def generate
     # create_items
-    # create_users
+    create_users
   end
 
   def create_items
