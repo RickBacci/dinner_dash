@@ -7,8 +7,15 @@ RSpec.describe Cart, type: :feature do
     item.save
 
     # item = Item.create(title: "banana", description: "sweet", price: 1)
-    user = User.create(name: 'Bam', email_address: 'email@address.com', username: 'bambam', password: 'pass')
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    def any_instance
+      allow_any_instance_of(ApplicationController)
+    end
+    
+    user = User.create(name: 'Bam',
+                       email_address: 'email@address.com',
+                       username: 'bambam',
+                       password: 'pass')
+    any_instance.to receive(:current_user).and_return(user)
     # creates a current_user
 
     visit item_path(item.id)
