@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 #    put 'items/:id', to: 'items#retire_item', :as => 'item_status' # custom route to update_status action!!!
 
     resources :items
-    resources :orders
+    resources :orders, except: [:create, :new, :update, :destroy]
    resources :categories do
      resources :items
    end
