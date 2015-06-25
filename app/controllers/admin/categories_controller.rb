@@ -11,10 +11,10 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new(category_params)
 
     if @category.save
-      flash[:notice] = "Category Created!"
+      flash[:notice] = 'Category Created!'
       redirect_to admin_categories_path
     else
-      flash[:notice] = "Category creation failed"
+      flash[:notice] = 'Category creation failed'
       render :new
     end
   end
@@ -28,10 +28,10 @@ class Admin::CategoriesController < Admin::BaseController
     @category.update(category_params)
 
     if @category.save
-      flash[:notice] = "Category successfully edited"
+      flash[:notice] = 'Category successfully edited'
       redirect_to admin_category_path(params[:id])
     else
-      flash[:notice] = "Category un-successfully edited"
+      flash[:notice] = 'Category un-successfully edited'
       render :edit
     end
   end
@@ -39,10 +39,10 @@ class Admin::CategoriesController < Admin::BaseController
   def destroy
     @category = Category.find(params[:id])
     if @category.destroy
-      flash[:notice] = "Category successfully destroyed"
+      flash[:notice] = 'Category successfully destroyed'
       redirect_to admin_categories_path
     else
-      flash[:notice] = "Category not destroyed"
+      flash[:notice] = 'Category not destroyed'
       redirect_to admin_categories_path
     end
   end

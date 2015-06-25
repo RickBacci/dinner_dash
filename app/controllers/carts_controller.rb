@@ -16,19 +16,18 @@ class CartsController < ApplicationController
 
   def update
     @cart.update_item(params[:item_id], params[:quantity])
-    flash[:notice] = "Item quantity updated"
+    flash[:notice] = 'Item quantity updated'
     redirect_to cart_path
   end
 
- # def destroy
- #   session[:cart] = {}
- #   redirect_to :back
- # end
-
+  # def destroy
+  #   session[:cart] = {}
+  #   redirect_to :back
+  # end
 
   def destroy
     @cart.remove_item(params[:item_id])
-    flash[:alert] = "Item removed from cart"
+    flash[:alert] = 'Item removed from cart'
     redirect_to cart_path
   end
 end

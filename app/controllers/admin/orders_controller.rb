@@ -14,7 +14,7 @@ class Admin::OrdersController < Admin::BaseController
     if @order.update_status valid_params
       redirect_to admin_dashboard_path
     else
-      redirect_to admin_dashboard_path, alert: "Order status updated"
+      redirect_to admin_dashboard_path, alert: 'Order status updated'
     end
   end
 

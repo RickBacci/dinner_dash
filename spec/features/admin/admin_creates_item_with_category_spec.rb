@@ -10,21 +10,21 @@ describe User, type: :feature do
 
     visit admin_dashboard_path
 
-    click_link "Create Item"
+    click_link 'Create Item'
 
-    fill_in "Title", with: "cherry"
-    fill_in "Description", with: "are red and awesome"
-    fill_in "Price", with: 2
+    fill_in 'Title', with: 'cherry'
+    fill_in 'Description', with: 'are red and awesome'
+    fill_in 'Price', with: 2
 
     check 'test'
 
-    click_on "Create Item"
+    click_on 'Create Item'
 
-    expect(page).to have_content("Item created!")
-    expect(page).to have_content("cherry")
+    expect(page).to have_content('Item created!')
+    expect(page).to have_content('cherry')
 
     visit categories_path
 
-    expect(page).to have_content("test")
+    expect(page).to have_content('test')
   end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Admin", type: :feature do
+describe 'Admin', type: :feature do
   include SignInHelpers
 
   it 'can visit the dashboard' do
@@ -8,9 +8,9 @@ describe "Admin", type: :feature do
 
     visit root_path
 
-    click_link "Admin"
+    click_link 'Admin'
 
-    expect(page).to have_content("Admin")
+    expect(page).to have_content('Admin')
   end
 
   it 'can add and item to the database' do
@@ -20,15 +20,15 @@ describe "Admin", type: :feature do
 
     visit new_admin_item_path
 
-    fill_in "Title", with: "Totally Awesome"
-    fill_in "Description", with: "Awesome Description"
-    fill_in "Price", with: "100"
+    fill_in 'Title', with: 'Totally Awesome'
+    fill_in 'Description', with: 'Awesome Description'
+    fill_in 'Price', with: '100'
     check 'test'
 
-    attach_file "item_picture", "spec/asset_specs/photos/test.png"
+    attach_file 'item_picture', 'spec/asset_specs/photos/test.png'
 
-    click_on "Create Item"
+    click_on 'Create Item'
 
-    expect(page).to have_selector("img")
+    expect(page).to have_selector('img')
   end
 end

@@ -20,4 +20,3 @@ describe User, type: :feature do
     expect(page).to_not have_button('Admin')
   end
 end
-

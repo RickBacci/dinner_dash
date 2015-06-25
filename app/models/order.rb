@@ -6,8 +6,8 @@ class Order < ActiveRecord::Base
 
   enum status: %w(ordered paid cancelled completed)
 
-  aasm :column => :status, :enum => true do
-    state :ordered, :initial => true
+  aasm column: :status, enum: true do
+    state :ordered, initial: true
     state :paid
     state :cancelled
     state :completed
@@ -33,12 +33,12 @@ class Order < ActiveRecord::Base
 
   def update_status(params)
     case params[:status]
-      when 'pay'
-        self.pay!
-      when 'cancel'
-        self.cancel!
-      when 'complete'
-        self.complete!
+    when 'pay'
+      self.pay!
+    when 'cancel'
+      self.cancel!
+    when 'complete'
+      self.complete!
     end
   end
 end

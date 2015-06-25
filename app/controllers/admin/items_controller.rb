@@ -11,10 +11,10 @@ class Admin::ItemsController < Admin::BaseController
     @item = Item.new(item_params)
 
     if @item.save
-      flash[:notice] = "Item created!"
+      flash[:notice] = 'Item created!'
       redirect_to @item
     else
-      flash[:notice] = "Item creation failed!"
+      flash[:notice] = 'Item creation failed!'
       render new_admin_item_path
     end
   end
@@ -32,16 +32,16 @@ class Admin::ItemsController < Admin::BaseController
     @item.update(item_params)
 
     if @item.save
-      flash[:notice] = "Item updated!"
+      flash[:notice] = 'Item updated!'
       redirect_to admin_items_path
     else
-      flash[:notice] = "Unable to update item"
+      flash[:notice] = 'Unable to update item'
       render '/admin/items/new'
     end
   end
 
   def retire
-  #def retire_item
+    # def retire_item
     Item.find(params[:id]).update(retire: true)
     redirect_to admin_items_path
   end
@@ -54,6 +54,5 @@ class Admin::ItemsController < Admin::BaseController
                                  :price,
                                  :retire,
                                  category_ids: [])
-
   end
 end

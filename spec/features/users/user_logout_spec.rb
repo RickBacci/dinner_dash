@@ -9,15 +9,15 @@ RSpec.describe User, type: :feature do
 
     visit login_path
 
-    fill_in "Username", with: "user"
-    fill_in "Password", with: "pass"
+    fill_in 'Username', with: 'user'
+    fill_in 'Password', with: 'pass'
 
-    click_button "Login"
+    click_button 'Login'
 
-    expect(page).to have_content("Logout")
+    expect(page).to have_content('Logout')
 
-    click_link "Logout"
+    click_link 'Logout'
 
-    expect(page).to have_content("Login")
+    expect(page).to have_content('Login')
   end
 end
