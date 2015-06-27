@@ -21,9 +21,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'bitters'
 gem 'bourbon'
 gem 'neat'
+gem 'bitters'
+gem 'refills'
 
 gem 'aasm'
 gem 'figaro'
@@ -48,6 +49,7 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'mrspec'
   gem 'byebug'
   gem 'pry'
   gem 'database_cleaner', '~> 1.4.1'

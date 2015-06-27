@@ -11,13 +11,40 @@
  * file per style scope.
  *
  *= require_self
- *= require_tree
  */
 @charset "utf-8";
 
 @import "bourbon";
 @import "base/base";   /* Bitters needs to be imported before Neat */
 @import "neat";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: red;
+  background-color: black;
+
+}
+
+div.container {
+  @include outer-container;
+  @include linear-gradient(#1e5799, #2989d8);
+  @include span-columns(6);
+  @include shift(3);
+  padding: 20px;
+}
+
+.parent {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include linear-gradient(#1e5799, #2989d8);
+  width: 300;
+}
+
+.parent > .child {
+  @include flex(1);
+}
 
 .item {
   display: inline-block;
@@ -26,3 +53,14 @@
 .centered {
   text-align: center;
 }
+
+section {
+  @include outer-container;
+  aside { @include span-columns(3); }
+  article { @include span-columns(6); }
+  p { @label 100px; }
+}
+
+#{$all-buttons} {
+    background-color: #f00;
+  }
