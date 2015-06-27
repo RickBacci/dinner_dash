@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Item, type: :feature do
+RSpec.describe Item, type: :feature do
   include SignInHelpers
   include ItemHelpers
 

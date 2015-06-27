@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe User, type: :feature do
+RSpec.describe "As a logged in admin", type: :feature do
   include SignInHelpers
 
-  it 'should be able to create new item with category as an admin' do
+  it 'I can create a new item with a category' do
     Category.create(name: 'test')
 
     sign_in_as(admin)

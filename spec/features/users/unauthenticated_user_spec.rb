@@ -2,7 +2,7 @@ require 'rails_helper'
 
 PAGE_DOES_NOT_EXIST = "The page you were looking for doesn't exist"
 
-describe User, type: :feature do
+RSpec.describe User, type: :feature do
   include SignInHelpers
 
   scenario 'user views index page' do

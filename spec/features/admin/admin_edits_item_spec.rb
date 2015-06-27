@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'As an admin when I edit an item', type: :feature do
+RSpec.describe 'As an admin when I edit an item', type: :feature do
   include SignInHelpers
   include ItemHelpers
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User, type: :model do
+RSpec.describe User, type: :model do
   include SignInHelpers
 
   let(:user) { User.create(valid_attributes) }

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Admin', type: :feature do
+RSpec.describe 'Admin', type: :feature do
   include SignInHelpers
 
   it 'can visit the dashboard' do

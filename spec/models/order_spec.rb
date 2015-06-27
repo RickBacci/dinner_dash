@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Order, type: :model do
+RSpec.describe Order, type: :model do
   include SignInHelpers
 
   it 'must belong to a user' do

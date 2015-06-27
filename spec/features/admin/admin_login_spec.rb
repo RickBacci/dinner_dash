@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User, type: :feature do
+RSpec.describe User, type: :feature do
   include SignInHelpers
 
   it 'should be able to login as an admin and see Admin Dashboard button' do

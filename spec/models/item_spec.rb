@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Item, type: :model do
+RSpec.describe Item, type: :model do
   before do
     @item = Item.new(valid_attributes)
     @item.categories.new(name: 'test').save

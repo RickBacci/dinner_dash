@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe User, type: :feature do
+RSpec.describe User, type: :feature do
   include SignUpHelpers
 
   it 'should let a registered user login to the site' do
