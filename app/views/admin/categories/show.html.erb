@@ -1,14 +1,18 @@
 <div class="centered">
+
+  <%= image_tag @category.image.url(:medium) %><br>
+  <%= @category.name %>
+
   <% @category.items.each do |item| %>
-    <span class="item">
       <%= image_tag item.picture.url(:medium) %><br>
+    <span class="item">
       <%= item.title %><br>
       <%= item.description %><br>
       <%= item.price %><br>
       <%= button_to "Add To Cart", carts_path(item_id: item.id) %>
       <%= link_to "View Item", admin_item_path(item) %> <br>
 
-      <%= link_to "Retire", admin_item_status_path(item), method: :put %><br>
+      <%= link_to "Retire", items_retire_admin_item_path(item), method: :put %><br>
     </span>
   <% end %>
 </div>

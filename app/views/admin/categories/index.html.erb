@@ -1,11 +1,11 @@
 <h1>Categories Index</h1>
   <br>
   <br>
-  <%= button_to "Create Category", new_admin_category_path, method: :get %>
+  <%= button_to "Create New Category", new_admin_category_path, method: :get %>
   <br>
   <br>
 <% @categories.each do |category| %>
-  <%= image_tag category.image.url(:thumb) %><br>
+  <%= image_tag category.image.url(:mini) %>
   <%= link_to category.name, admin_category_path(category) %>
   <%= link_to "Delete", admin_category_path(category), method: :delete %>
   <%= link_to "Edit", edit_admin_category_path(category) %>

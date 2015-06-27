@@ -1,4 +1,7 @@
 <div class="centered">
+  <%= image_tag @category.image.url(:medium) %><br>
+  <%= @category.name %>
+
   <% @category_items.each do |item| %>
     <span class="item">
       <%= image_tag item.picture.url(:medium) %><br>

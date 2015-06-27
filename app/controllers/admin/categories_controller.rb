@@ -20,7 +20,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def edit
-    @category = Category.new
+    @category = Category.find(params[:id])
   end
 
   def update
@@ -49,6 +49,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def show
     @category = Category.find(params[:id])
+    @category_items = @category.items.where(retire: false)
   end
 
   private

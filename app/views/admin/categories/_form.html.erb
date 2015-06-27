@@ -7,19 +7,21 @@
     <% end %>
   </div>
 <% end %>
-      </br>
+ </br>
 
-<div class='container'><%= form_for @category, url: admin_categories_path, html: { :multipart => true } do |f| %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %>
-  <% if @category.image.exists? %>
-      <%= image_tag @category.image.url %><br/>
-    <%= f.label :image, "Attach a New Image" %><br />
-    <%= f.file_field :image %>
+<div class='container'>
+  <%= form_for [:admin, @category], html: { :multipart => true } do |f| %>
+    <%= f.label "Name" %>
+    <%= f.text_field :name %>
+    <% if @category.image.exists? %>
+      <%= image_tag @category.image.url(:medium) %><br/>
+      <%= f.label :image, "Attach a New Image" %><br />
+      <%= f.file_field :image %>
+    <% else %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    <% end %>
+    <%= f.submit "Submit" %>
   <% end %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit "Submit" %>
-<% end %>
 </div>
 

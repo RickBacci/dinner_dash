@@ -8,4 +8,11 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category_items = @category.items.where(retire: false)
   end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :image)
+  end
+
 end
